@@ -30,10 +30,10 @@ My work focuses on how can we bring new machine learning solutions to the field 
 
 ## Teaching
 
-Machine Learning (Postgraduate)
+### Machine Learning (Postgraduate)
 The aim of the module is to give students an understanding of machine learning methods, including pattern recognition, clustering and neural networks, and to allow them to apply such methods in a range of areas.
 
-Machine Learning for Visual Data Analysis (Postgraduate)
+### Machine Learning for Visual Data Analysis (Postgraduate)
 The module will cover the following topics: The Discrete Fourier Transform and the frequency content of images. The design and use of Gabor filters. Principal Component Analysis for denoising and compression. Unsupervised classification via feature space clustering. Texture segmentation with Gabor filters.
 
 ## Affiliations
@@ -103,14 +103,8 @@ The module will cover the following topics: The Discrete Fourier Transform and t
 
 ### Definition lists can be used with HTML syntax. -->
 
-<dl>
-<dt>Elona Shatri</dt>
-<dt>PhD student</dt>
-<dt>Queen Mary University of London</dt>
-<dt>London</dt>
-<dt>United Kingdoms</dt>
-</dl>
+
 
 ## Contact
-e.shatri1@gmail.com
-e.shatri@qmul.ac.uk
+* e.shatri1@gmail.com
+* e.shatri@qmul.ac.uk
