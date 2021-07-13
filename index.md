@@ -1,11 +1,10 @@
 ---
 layout: default
 ---
-Elona Shatri 
 
-[Personal Website](elonashatri.co.uk)
-[School Page](http://eecs.qmul.ac.uk/profiles/shatrielona-1.html)
-[Medium](https://medium.com/@e.shatri1)
+* [Personal Website](elonashatri.co.uk)
+* [School Page](http://eecs.qmul.ac.uk/profiles/shatrielona-1.html)
+* [Medium](https://medium.com/@e.shatri1)
 
 Hello there!
 
