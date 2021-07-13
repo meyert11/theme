@@ -2,7 +2,7 @@
 layout: default
 ---
 
-* [Personal Website](elonashatri.co.uk)
+* [Personal Website](www.elonashatri.co.uk)
 * [School Page](http://eecs.qmul.ac.uk/profiles/shatrielona-1.html)
 * [Medium](https://medium.com/@e.shatri1)
 
@@ -41,6 +41,17 @@ The module will cover the following topics: The Discrete Fourier Transform and t
 *   [Centre for Digital Msusic](http://c4dm.eecs.qmul.ac.uk/)
 *   [Centre for Intelligent Sensing](http://cis.eecs.qmul.ac.uk/)
 *   [Steinberg](https://www.steinberg.net/en/home.html)
+
+## Education
+
+* 2019 - Currently Ph.D. on Optical Music Recognition - Queen Mary University of London
+
+* 2017 - 2019 MSc in Information Systems and Applications - National Tsing Hua University
+
+* 2013 - 2017 BSc in Telecommunications: Faculty of Electrical and Computer Engineering, University of Prishtina
+
+
+
 
 <!-- ##### Header 5
 
