@@ -98,11 +98,10 @@ This is a normal paragraph following a header. GitHub is a code hosting platform
 ### Definition lists can be used with HTML syntax. -->
 
 <dl>
-<dt>Elona</dt>
-<dd>Shatri</dd>
+<dt>Elona Shatri</dt>
 <dt>PhD student</dt>
-<dd>Queen Mary University of London</dd>
-<dd>London</dd>
+<dt>Queen Mary University of London</dt>
+<dt>London</dt>
 <dt>United Kingdoms</dt>
 </dl>
 
