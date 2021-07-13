@@ -3,7 +3,10 @@ layout: default
 ---
 Elona Shatri 
 
-[Link to another page](elonashatri.co.uk).
+[Personal Website](elonashatri.co.uk)
+[School Page](http://eecs.qmul.ac.uk/profiles/shatrielona-1.html)
+[Medium](https://medium.com/@e.shatri1)
+
 Hello there!
 
 I'm a PhD candidate at the UKRI Centre for Doctoral Training in Artificial Intelligence and Music (AIM). I am part of Centre for Digital Music (C4DM) research group at Queen Mary University of London. 
@@ -13,24 +16,27 @@ My research interest is mainly Optial Music Recogntion as well as other MIR rela
 My work focuses on how can we bring new machine learning solutions to the field of OMR and achieve an end-to-end solution to the problem.
 
 
-# Conferences
-
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-
 ## Papers
 
-*   OPTICAL MUSIC RECOGNITION: STATE OF THE ART AND MAJOR CHALLENGES
-*   DoReMi: First glance at a universal OMR dataset
+*   [Optical Music Recogntion: State of the Art and Major Challenges at TENOR2020-2021](https://www.tenor-conference.org/proceedings/2020/23_Shatri_tenor20.pdf)
+*   [DoReMi: First glance at a universal OMR dataset - WoRMS2021](https://sites.google.com/view/worms2021/home)
 
 ## Blogposts
 
-*   What is Optical Music Recognition?
-*   A review on Super-Resolution
-*   A review of Generative Adversarial Networks
-*   Optical Music Recognition: State of the Art and Major Challenges
+*   [What is Optical Music Recognition?](https://towardsdatascience.com/what-is-optical-music-recognition-6515d8a53e01)
+*   [A review on Super-Resolution](https://medium.com/analytics-vidhya/a-review-on-super-resolution-2c78cd77885a)
+*   [A review of Generative Adversarial Networks](https://towardsdatascience.com/a-review-of-generative-adversarial-networks-9af21e94bda4)
+*   [Optical Music Recognition: State of the Art and Major Challenges](https://towardsdatascience.com/optical-music-recognition-state-of-the-art-and-major-challenges-aa100923c78d)
 
+## Teaching
 
-#### Affiliations
+Machine Learning (Postgraduate)
+The aim of the module is to give students an understanding of machine learning methods, including pattern recognition, clustering and neural networks, and to allow them to apply such methods in a range of areas.
+
+Machine Learning for Visual Data Analysis (Postgraduate)
+The module will cover the following topics: The Discrete Fourier Transform and the frequency content of images. The design and use of Gabor filters. Principal Component Analysis for denoising and compression. Unsupervised classification via feature space clustering. Texture segmentation with Gabor filters.
+
+## Affiliations
 
 *   [UKRI Centre for Doctoral Training in Artificial Intelligence and Music](https://aim.qmul.ac.uk/) 
 *   [Centre for Digital Msusic](http://c4dm.eecs.qmul.ac.uk/)
