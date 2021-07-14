@@ -51,15 +51,12 @@ Let’s start by explaining each one of the data types and what they contain:
 
 
 When saving the scores in Dorico, it uses the .dorico file format, which is the project type. Saving the projects is really important for the lifecycle since it allows us to use the same layout settings if we later want to generate other data or change.
-MusicXML
-MusicXML is widely known and used data format in music notation which uses the XML file format. MusicXML allows interchangeability between different scorewriters. Dorico can export the projects to MusicXML. The extension for these files is .xml. 
-More on how these files can be exported: https://steinberg.help/dorico_pro/v3/en/dorico/topics/project_file_handling/project_file_handling_musicxml_files_exporting_t.html
 
 
 <A href="#MusicXML">  MusicXML </A> 
 
 MusicXML is widely known and used data format in music notation which uses the XML file format. MusicXML allows interchangeability between different scorewriters. Dorico can export the projects to MusicXML. The extension for these files is .xml. 
-More on how these files can be exported: https://steinberg.help/dorico_pro/v3/en/dorico/topics/project_file_handling/project_file_handling_musicxml_files_exporting_t.html
+More on how these files can be exported check <A href="https://steinberg.help/dorico_pro/v3/en/dorico/topics/project_file_handling/project_file_handling_musicxml_files_exporting_t.html"> here </A>
 
 <A href="#OMR-metadata"> OMR metadata </A> 
 
