@@ -9,7 +9,7 @@ This documents the lifecycle of the DOREMI dataset. DOReMi is a dataset that con
 ## [Discovery and Planning](#discovery-and-planning)
 
 ### [Data type and format](#Data-type-and-format)
-*   [Dorico project](#dorico-project)
+*   Dorico project
 *   [MusicXML](#MusicXML)
 *   [OMR metadata](#OMR-metadata)
 *   [Images of scores](#Images-of-scores)
@@ -47,7 +47,7 @@ The following are the data formats:
 
 Let’s start by explaining each one of the data types and what they contain:
 
-<A id="#dorico-project"> Dorico project </A>
+<A href="#dorico-project"> Dorico project </A>
 
 
 When saving the scores in Dorico, it uses the .dorico file format, which is the project type. Saving the projects is really important for the lifecycle since it allows us to use the same layout settings if we later want to generate other data or change.
