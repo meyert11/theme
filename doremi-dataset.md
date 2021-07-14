@@ -21,7 +21,6 @@ This documents the lifecycle of the DOREMI dataset. DOReMi is a dataset that con
 ## [Publication and Sharing]()
 ## [Long-term Management]()
 
-<hline>
 
 ##  <A href="#discovery-and-planning"> Discovery and Planning </A>
 
