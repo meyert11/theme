@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-default
 ---
 
 # DoReMi Dataset Documentation
