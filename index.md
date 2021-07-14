@@ -27,7 +27,7 @@ An OMR pipeline should be able to capture the right position and the relationshi
 The OMR pipeline has four main blocks, and we want to tackle them one by one, using a deep learning technique and compare to the already existing techniques. If the DL techniques show improvements, then an end-to-end network is the final goal of our work. Since the existing datasets do not offer enough classes and data, the first step for use would be data augmentation. This will be done using the digitized musical sheets from music notation software Dorico, having this way a ground truth. These sheets will be subject to image degradation techniques, using the depredated images as inputs in our pipeline. The next step would be designing the methodology for object recognition and reconstruction using the deep neural network approach.
 
 
-## DoReMi Dataset
+## [DoReMi Dataset]=(./doremi-dataset.html).
 We recently published our DoReMi dataset at the [3rd International Workshop on Reading Music Systems 2021](https://sites.google.com/view/worms2021/home). We made our dataset available in [this page](https://github.com/steinbergmedia/DoReMi/releases/tag/v1.0) open for anyone to use it, experiment with it and maybe suggesting new ways to represent these data.  
 
 Documentation is also availabe in the same repository of the data release. 
