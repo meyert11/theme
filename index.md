@@ -14,6 +14,19 @@ My research interest is mainly Optial Music Recogntion as well as other MIR rela
 
 My work focuses on how can we bring new machine learning solutions to the field of OMR and achieve an end-to-end solution to the problem.
 
+
+Optical Music Recognition (OMR) is concerned with digitizing music sheets into a machine-readable format. Being able to compose, transcribe and edit music by means of taking a picture of a music sheet, would put musician?s workload at ease. Such automation would allow musicians to use search-ability and to perform quantitative measures in the musical pieces. This problem comes down to a simple, how can computers be made to read music. The output to this process being a machine-readable file such as MIDI, MusicXML, MEI files. The objective is outputting semantic mark-up identifying as many notational elements as possible, along with the relationship to their position in the original image.
+
+
+Prior solutions have used algorithmic approaches and have involved layers of algorithmic rules applied to traditional feature detection techniques such as edge detection. One of the approaches we want to further investigate is using deep neural networks to solve the problem. Before going into this step another very important processing should be performed, that is, tackling the quality of the input picture of the music sheet. Image preprocessing steps are to be taken which will later help in the training step.
+
+ 
+
+An OMR pipeline should be able to capture the right position and the relationships between two notes and its distinctive features. Pacha et al. (2018) proposed an end-to-end trainable object detector that can detect almost the full vocabulary of modern music notation in handwritten scores. Using deep convolutional networks in a dataset with symbol-level notations they achieve a mean average precision up to 80 %.
+
+The OMR pipeline has four main blocks, and we want to tackle them one by one, using a deep learning technique and compare to the already existing techniques. If the DL techniques show improvements, then an end-to-end network is the final goal of our work. Since the existing datasets do not offer enough classes and data, the first step for use would be data augmentation. This will be done using the digitized musical sheets from music notation software Dorico, having this way a ground truth. These sheets will be subject to image degradation techniques, using the depredated images as inputs in our pipeline. The next step would be designing the methodology for object recognition and reconstruction using the deep neural network approach.
+
+
 ## DoReMi Dataset
 We recently published our DoReMi dataset at the [3rd International Workshop on Reading Music Systems 2021](https://sites.google.com/view/worms2021/home). We made our dataset available in [this page](https://github.com/steinbergmedia/DoReMi/releases/tag/v1.0) open for anyone to use it, experiment with it and maybe suggesting new ways to represent these data.  
 
