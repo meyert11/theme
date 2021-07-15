@@ -37,9 +37,9 @@ This dataset has the following six types of data:
 * [MIDI](#MIDI) 
 * [Music Encoding Initiative (MEI)](#MEI)
 
-The following are the data formats:
+The following respective data formats:
 *   Dorico
-*   XML
+*   MusicXML
 *   XML
 *   PNG
 *   MIDI
@@ -48,7 +48,7 @@ The following are the data formats:
 Let’s start by explaining each one of the data types and what they contain:
 
 <A href="#dorico-project"> Dorico project </A>
-
+<img src="/Users/elonashatri/Documents/GitHub/elonashatri.github.io/assets/img/Dorico_Logo.png" alt="Profile" >
 
 When saving the scores in Dorico, it uses the .dorico file format, which is the project type. Saving the projects is really important for the lifecycle since it allows us to use the same layout settings if we later want to generate other data or change.
 
