@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 Gem::Specification.new do |s|
-  s.name          = 'jekyll-theme-minimal'
+  s.name          = 'Elonashatri'
   s.version       = '0.1.1'
   s.license       = 'CC0-1.0'
   s.authors       = ['Elona Shatri', 'GitHub, Inc.']
-  s.email         = ['opensource+jekyll-theme-minimal@github.com']
+  s.email         = ['e.shatri@qmul.ac.uk']
   s.homepage      = 'https://github.com/pages-themes/minimal'
   s.summary       = ''
 

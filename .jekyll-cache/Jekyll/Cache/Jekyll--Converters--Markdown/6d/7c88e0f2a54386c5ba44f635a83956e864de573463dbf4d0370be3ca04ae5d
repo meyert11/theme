@@ -1,0 +1,2163 @@
+I"1<h1 id="doremi---data-collection-lifecycle-document">DoReMi - Data Collection Lifecycle Document</h1>
+
+<p>This documents the lifecycle of the DOREMI dataset. DOReMi is a dataset that contains data related to OMR research. DOReMi is a product of collaborative work between <a href="https://new.steinberg.net/dorico/">Steinberg’s Dorico</a> team and QMUL (Elona Shatri and George Fazekas). This dataset aims to fill in the existing gaps in OMR research. It is part of a larger research question, whether deep learning can assist theOMR field.  What sets DOReMi aside from the other datasets is the richness of data. Given that this dataset is generated using Dorico (a music notation software from Steinberg), we had the chance to grab more musical information on it, but also different types of data. Using Dorico we can generate 5 types of data that could possibly be used in different steps of OMR. These data are images of scores (binary or colour), the musicXML file, XML files with metadata such as bounding boxes of each object together with musical information, which will be explained in detail later on, and as part of our dataset we can utilize the midi audio file which can be later used for transcription as well.</p>
+
+<p>Music used to generate this dataset comes from a software test set provided by the Dorico team. This test set includes a wider number of objects, classes and various cases of notations not normally seen in real-world music. About half of this dataset is copyright protected; therefore, we only include openly distributable scores in the final published dataset. However, pre-trained models trained in the whole dataset will also be published. DoReMi includes around 6432 images of sheet
+music with nearly a million annotated objects which is 1 th 50 the size of DeepScores and 42 times the size of Muscima++. Each object on the page is annotated with category labels from 94 different classes. However, there is an emphasised class imbalance; stems and noteheads make up half of the annotated objects in the dataset. We also provide prepared subsets fulfilling different requirements on the number of pages, number of classes and the number of staves. Most of the images include one system per page; depending on the number of voices, they will have one or more staves per page.</p>
+
+<h2 id="discovery-and-planning"><a href="#discovery-and-planning">Discovery and Planning</a></h2>
+
+<h3 id="data-type-and-format"><a href="#Data-type-and-format">Data type and format</a></h3>
+<ul>
+  <li>Dorico project</li>
+  <li><a href="#MusicXML">MusicXML</a></li>
+  <li><a href="#OMR-metadata">OMR metadata</a></li>
+  <li><a href="#Images-of-scores">Images of scores</a></li>
+  <li><a href="#MIDI">MIDI</a></li>
+  <li><a href="">Combining DOReMi with Muscima++ and Deepscores</a></li>
+</ul>
+
+<h2 id="initial-data-collection"><a href="">Initial Data Collection</a></h2>
+<h2 id="data-preparation-and-analysis"><a href="">Data Preparation and analysis</a></h2>
+<h2 id="publication-and-sharing"><a href="">Publication and Sharing</a></h2>
+<h2 id="long-term-management"><a href="">Long-term Management</a></h2>
+
+<h2 id="-discovery-and-planning-"><a href="#discovery-and-planning"> Discovery and Planning </a></h2>
+
+<p>In this section, I will explain the data types and formats we have decided to use.</p>
+
+<h3 id="-data-type-and-format-"><a href="#Data-type-and-format"> Data type and format </a></h3>
+
+<p>This dataset has the following six types of data:</p>
+
+<ul>
+  <li><a href="#dorico-project">Dorico project</a></li>
+  <li><a href="#MusicXML">MusicXML</a></li>
+  <li><a href="#OMR-metadata">OMR metadata</a></li>
+  <li><a href="#Images-of-scores">Images of scores</a></li>
+  <li><a href="#MIDI">MIDI</a></li>
+  <li><a href="#MEI">Music Encoding Initiative (MEI)</a></li>
+</ul>
+
+<p>The following respective data formats:</p>
+<ul>
+  <li>Dorico</li>
+  <li>MusicXML</li>
+  <li>XML</li>
+  <li>PNG</li>
+  <li>MIDI</li>
+  <li>MEI</li>
+</ul>
+
+<p>Let’s start by explaining each one of the data types and what they contain:</p>
+
+<p><a href="#dorico-project"> Dorico project </a>
+<img src="/assets/img/Dorico_Logo.png" alt="Dorico-project" /></p>
+
+<p>When saving the scores in Dorico, it uses the .dorico file format, which is the project type. Saving the projects is really important for the lifecycle since it allows us to use the same layout settings if we later want to generate other data or change.</p>
+
+<p><img src="/assets/img/Dorico-soft.png" alt="Dorico-soft" /></p>
+
+<p><a href="#MusicXML">  MusicXML </a></p>
+
+<p>MusicXML is widely known and used data format in music notation which uses the XML file format. MusicXML allows interchangeability between different scorewriters. Dorico can export the projects to MusicXML. The extension for these files is .xml. 
+More on how these files can be exported check <a href="https://steinberg.help/dorico_pro/v3/en/dorico/topics/project_file_handling/project_file_handling_musicxml_files_exporting_t.html"> here </a>
+<br />
+<br /></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</span>
+<span class="cp">&lt;!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd"&gt;</span>
+<span class="nt">&lt;score-partwise</span> <span class="na">version=</span><span class="s">"3.1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;work&gt;</span>
+    <span class="nt">&lt;work-title&gt;</span>beam groups 3<span class="nt">&lt;/work-title&gt;</span>
+  <span class="nt">&lt;/work&gt;</span>
+  <span class="nt">&lt;movement-title&gt;</span>beam groups 3<span class="nt">&lt;/movement-title&gt;</span>
+  <span class="nt">&lt;identification&gt;</span>
+    <span class="nt">&lt;encoding&gt;</span>
+      <span class="nt">&lt;software&gt;</span>Dorico 4.0.0.5342<span class="nt">&lt;/software&gt;</span>
+      <span class="nt">&lt;encoding-date&gt;</span>2021-06-14<span class="nt">&lt;/encoding-date&gt;</span>
+    <span class="nt">&lt;/encoding&gt;</span>
+  <span class="nt">&lt;/identification&gt;</span>
+  <span class="nt">&lt;part-list&gt;</span>
+    <span class="nt">&lt;score-part</span> <span class="na">id=</span><span class="s">"P1"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;part-name&gt;</span>P 1<span class="nt">&lt;/part-name&gt;</span>
+    <span class="nt">&lt;/score-part&gt;</span>
+  <span class="nt">&lt;/part-list&gt;</span>
+  <span class="nt">&lt;part</span> <span class="na">id=</span><span class="s">"P1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;measure</span> <span class="na">number=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;attributes&gt;</span>
+        <span class="nt">&lt;divisions&gt;</span>12<span class="nt">&lt;/divisions&gt;</span>
+        <span class="nt">&lt;key</span> <span class="na">number=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;fifths&gt;</span>0<span class="nt">&lt;/fifths&gt;</span>
+          <span class="nt">&lt;mode&gt;</span>major<span class="nt">&lt;/mode&gt;</span>
+        <span class="nt">&lt;/key&gt;</span>
+        <span class="nt">&lt;time&gt;</span>
+
+...
+
+  <span class="nt">&lt;/part&gt;</span>
+<span class="nt">&lt;/score-partwise&gt;</span>
+</code></pre></div></div>
+
+<!-- ![MusicXML-example](/assets/img/musicXML.png) -->
+
+<p><a id="OMR-metadata"> OMR metadata </a></p>
+
+<p>Following the organisation of Muscima++, DoReMi has an OMR metadata file which includes bounding boxes of each element: top, left, width and height. It also includes the pixel mask for each element giving each object’s pixels inside the bounding box.</p>
+
+<p>In words, each file can have data on more than one page, if that is the case, an id is assigned to each page. Each page can have multiple nodes. Nodes are the individual elements or objects in the score, for instance, stem, staff lines, blackhead, whole note, augmentation dot and so on. Each object or node is assigned an id. This node will now have the bounding box information which includes top, left, width and height. The top is the distance from the top of the page to the point where the object starts (vertically). Left is the distance from the left of the page to the point where the object starts (horizontally). Height is the distance from top to where the object ends (vertically). Width is the distance from the left point to the rightest point where the object ends (horizontally). 
+<img src="/assets/img/bbox.png" alt="bbox" /></p>
+
+<p>Additionally, DoReMi provides the relationships between primitives. It vaguely follows the Music Notation Graph (MUNG), which creates a graph representation of music notations. Inlinks and outlinks reference back and forth to the ID of the objects they are related to—for instance, a notehead half outlinks to a stem or a slur or both of them. Conversely, the stem inlinks to the notehead half.</p>
+
+<p>OMR metadata are the files that incorporate most of the information needed for OMR practitces. These files include visual information, coordinates, bounding boxes, pixel information and furthermore musical information such as duration beats, onset beats, pitch octave, midi pitch note, normalized pitch step and the dorico event id depending on the class of the object.</p>
+
+<p>Depending on the task the dataset includes both parsed and unparsed XML files. If the dataset is to be used only for object detection or instance segmentation the parsed files are divided by page, corresponding to an image respective to the actual page. These files hold information on the bounding boxes and pixel mask information.</p>
+
+<!-- ![unparsed-xml](/assets/img/unparsed-xml.png) -->
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;Pages&gt;</span>
+<span class="nt">&lt;Page</span> <span class="na">pageIndex=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;Nodes&gt;</span>
+<span class="nt">&lt;Node&gt;</span>
+<span class="nt">&lt;Id&gt;</span>95<span class="nt">&lt;/Id&gt;</span>
+<span class="nt">&lt;ClassName&gt;</span>timeSig4<span class="nt">&lt;/ClassName&gt;</span>
+<span class="nt">&lt;Top&gt;</span>709<span class="nt">&lt;/Top&gt;</span>
+<span class="nt">&lt;Left&gt;</span>386<span class="nt">&lt;/Left&gt;</span>
+<span class="nt">&lt;Width&gt;</span>36<span class="nt">&lt;/Width&gt;</span>
+<span class="nt">&lt;Height&gt;</span>42<span class="nt">&lt;/Height&gt;</span>
+<span class="nt">&lt;Mask&gt;</span>0:11 1:16 0:20 1:16 0:20 1:15 0:21 1:15 0:21 1:14 0:22 1:13 0:22 1:14 0:22 1:13 0:3 1:3 0:17 1:12 0:3 1:4 0:17 1:11 0:3 1:5 0:16 1:12 0:2 1:6 0:16 1:11 0:3 1:6 0:15 1:11 0:3 1:7 0:15 1:10 0:3 1:8 0:15 1:10 0:2 1:9 0:14 1:10 0:2 1:10 0:14 1:9 0:2 1:11 0:13 1:9 0:3 1:11 0:12 1:10 0:2 1:12 0:12 1:9 0:3 1:12 0:11 1:9 0:4 1:12 0:11 1:8 0:5 1:12 0:10 1:8 0:6 1:12 0:9 1:8 0:7 1:12 0:9 1:7 0:8 1:12 0:8 1:7 0:9 1:12 0:7 1:7 0:10 1:12 0:7 1:144 0:17 1:12 0:24 1:12 0:24 1:12 0:24 1:12 0:24 1:12 0:23 1:13 0:22 1:15 0:18 1:21 0:14 1:22 0:14 1:22 0:15 1:21 0:3 <span class="nt">&lt;/Mask&gt;</span>
+<span class="nt">&lt;Data&gt;</span>
+<span class="nt">&lt;DataItem</span> <span class="na">key=</span><span class="s">"dorico_event_id"</span> <span class="na">type=</span><span class="s">"int"</span><span class="nt">&gt;</span>904<span class="nt">&lt;/DataItem&gt;</span>
+<span class="nt">&lt;DataItem</span> <span class="na">key=</span><span class="s">"time_signature_description"</span> <span class="na">type=</span><span class="s">"str"</span><span class="nt">&gt;</span>2/4 (q, 1+1)<span class="nt">&lt;/DataItem&gt;</span>
+<span class="nt">&lt;DataItem</span> <span class="na">key=</span><span class="s">"staff_id"</span> <span class="na">type=</span><span class="s">"int"</span><span class="nt">&gt;</span>0<span class="nt">&lt;/DataItem&gt;</span>
+<span class="nt">&lt;/Data&gt;</span>
+<span class="nt">&lt;/Node&gt;</span>
+<span class="nt">&lt;Node&gt;</span>
+<span class="nt">&lt;Id&gt;</span>94<span class="nt">&lt;/Id&gt;</span>
+<span class="nt">&lt;ClassName&gt;</span>timeSig2<span class="nt">&lt;/ClassName&gt;</span>
+<span class="nt">&lt;Top&gt;</span>666<span class="nt">&lt;/Top&gt;</span>
+<span class="nt">&lt;Left&gt;</span>387<span class="nt">&lt;/Left&gt;</span>
+<span class="nt">&lt;Width&gt;</span>34<span class="nt">&lt;/Width&gt;</span>
+<span class="nt">&lt;Height&gt;</span>43<span class="nt">&lt;/Height&gt;</span>
+<span class="nt">&lt;Mask&gt;</span>0:9 1:15 0:16 1:21 0:11 1:25 0:8 1:7 0:8 1:12 0:6 1:7 0:10 1:12 0:4 1:7 0:12 1:12 0:3 1:9 0:11 1:12 0:1 1:12 0:9 1:12 0:1 1:13 0:8 1:26 0:8 1:27 0:7 1:27 0:7 1:27 0:7 1:27 0:7 1:27 0:6 1:27 0:7 1:14 0:1 1:12 0:6 1:15 0:2 1:11 0:6 1:14 0:4 1:9 0:6 1:15 0:6 1:5 0:8 1:14 0:19 1:14 0:19 1:14 0:19 1:13 0:20 1:11 0:21 1:10 0:23 1:8 0:24 1:8 0:25 1:7 0:16 1:3 0:7 1:7 0:17 1:3 0:5 1:16 0:9 1:4 0:5 1:19 0:6 1:4 0:4 1:23 0:2 1:5 0:3 1:30 0:3 1:31 0:3 1:31 0:2 1:31 0:3 1:31 0:2 1:32 0:2 1:8 0:4 1:19 0:3 1:7 0:6 1:17 0:4 1:6 0:9 1:14 0:5 1:5 0:12 1:11 0:7 1:3 0:18 1:1 0:11 <span class="nt">&lt;/Mask&gt;</span>
+<span class="nt">&lt;Data&gt;</span>
+<span class="nt">&lt;DataItem</span> <span class="na">key=</span><span class="s">"dorico_event_id"</span> <span class="na">type=</span><span class="s">"int"</span><span class="nt">&gt;</span>904<span class="nt">&lt;/DataItem&gt;</span>
+<span class="nt">&lt;DataItem</span> <span class="na">key=</span><span class="s">"time_signature_description"</span> <span class="na">type=</span><span class="s">"str"</span><span class="nt">&gt;</span>2/4 (q, 1+1)<span class="nt">&lt;/DataItem&gt;</span>
+<span class="nt">&lt;DataItem</span> <span class="na">key=</span><span class="s">"staff_id"</span> <span class="na">type=</span><span class="s">"int"</span><span class="nt">&gt;</span>0<span class="nt">&lt;/DataItem&gt;</span>
+<span class="nt">&lt;/Data&gt;</span>
+...
+<span class="nt">&lt;/Nodes&gt;</span>
+<span class="nt">&lt;/Page&gt;</span>
+<span class="nt">&lt;/Pages&gt;</span>
+</code></pre></div></div>
+
+<p>Certain (playable) objects are also annotated with a Dorico event ID which is a unique event identifier that provides additional information on how some objects are linked. For instance, notes like noteheads have information on the duration beats, onset beats, pitch octave, midi pitch code, normalised pitch step and an event ID. 
+<br />
+<br /></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Node&gt;</span>
+<span class="nt">&lt;Id&gt;</span>504<span class="nt">&lt;/Id&gt;</span>
+<span class="nt">&lt;ClassName&gt;</span>noteheadBlack<span class="nt">&lt;/ClassName&gt;</span>
+<span class="nt">&lt;Top&gt;</span>466<span class="nt">&lt;/Top&gt;</span>
+<span class="nt">&lt;Left&gt;</span>2236<span class="nt">&lt;/Left&gt;</span>
+<span class="nt">&lt;Width&gt;</span>28<span class="nt">&lt;/Width&gt;</span>
+<span class="nt">&lt;Height&gt;</span>24<span class="nt">&lt;/Height&gt;</span>
+<span class="nt">&lt;Mask&gt;</span>0:12 1:11 0:14 1:16 0:10 1:19 0:8 1:21 0:6 1:22 0:5 1:24 0:3 1:25 0:2 1:26 0:1 1:27 0:1 1:27 0:1 1:54 0:1 1:27 0:1 1:26 0:2 1:26 0:2 1:25 0:3 1:24 0:4 1:23 0:5 1:22 0:6 1:21 0:8 1:19 0:10 1:16 0:13 1:13 0:18 1:6 0:16 <span class="nt">&lt;/Mask&gt;</span>
+<span class="nt">&lt;Outlinks&gt;</span>541 559 571<span class="nt">&lt;/Outlinks&gt;</span>
+<span class="nt">&lt;Data&gt;</span>
+<span class="nt">&lt;DataItem</span> <span class="na">key=</span><span class="s">"duration_beats"</span> <span class="na">type=</span><span class="s">"float"</span><span class="nt">&gt;</span>0.333333<span class="nt">&lt;/DataItem&gt;</span>
+<span class="nt">&lt;DataItem</span> <span class="na">key=</span><span class="s">"onset_beats"</span> <span class="na">type=</span><span class="s">"float"</span><span class="nt">&gt;</span>47.666668<span class="nt">&lt;/DataItem&gt;</span>
+<span class="nt">&lt;DataItem</span> <span class="na">key=</span><span class="s">"pitch_octave"</span> <span class="na">type=</span><span class="s">"int"</span><span class="nt">&gt;</span>4<span class="nt">&lt;/DataItem&gt;</span>
+<span class="nt">&lt;DataItem</span> <span class="na">key=</span><span class="s">"midi_pitch_code"</span> <span class="na">type=</span><span class="s">"int"</span><span class="nt">&gt;</span>69<span class="nt">&lt;/DataItem&gt;</span>
+<span class="nt">&lt;DataItem</span> <span class="na">key=</span><span class="s">"normalized_pitch_step"</span> <span class="na">type=</span><span class="s">"str"</span><span class="nt">&gt;</span>A<span class="nt">&lt;/DataItem&gt;</span>
+<span class="nt">&lt;DataItem</span> <span class="na">key=</span><span class="s">"dorico_event_id"</span> <span class="na">type=</span><span class="s">"int"</span><span class="nt">&gt;</span>1120<span class="nt">&lt;/DataItem&gt;</span>
+<span class="nt">&lt;DataItem</span> <span class="na">key=</span><span class="s">"staff_id"</span> <span class="na">type=</span><span class="s">"int"</span><span class="nt">&gt;</span>0<span class="nt">&lt;/DataItem&gt;</span>
+<span class="nt">&lt;/Data&gt;</span>
+<span class="nt">&lt;/Node&gt;</span>
+</code></pre></div></div>
+
+<p><!-- ![notehead](/assets/img/notehead.png) --></p>
+
+<p>For elements such as clefs, our dataset provides an event ID, clef type, clef hotspot, clef required stave lines and clef stave position. Clef hotspot identifies the midi pitch that clef denotes, i.e. for treble clef is G4, as that is the pitch of the second stave line from the bottom. Clef required stave lines shows how many stave lines the clef needs.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Node&gt;</span>
+<span class="nt">&lt;Id&gt;</span>93<span class="nt">&lt;/Id&gt;</span>
+<span class="nt">&lt;ClassName&gt;</span>gClef<span class="nt">&lt;/ClassName&gt;</span>
+<span class="nt">&lt;Top&gt;</span>638<span class="nt">&lt;/Top&gt;</span>
+<span class="nt">&lt;Left&gt;</span>309<span class="nt">&lt;/Left&gt;</span>
+<span class="nt">&lt;Width&gt;</span>56<span class="nt">&lt;/Width&gt;</span>
+<span class="nt">&lt;Height&gt;</span>147<span class="nt">&lt;/Height&gt;</span>
+<span class="nt">&lt;Mask&gt;</span>0:35 1:5 0:50 1:7 0:48 1:9 0:46 1:11 0:44 1:12 0:44 1:13 0:42 1:14 0:41 1:16 0:40 1:16 0:39 1:18 0:38 1:18 0:37 1:19 0:37 1:20 0:35 1:21 0:35 1:10 0:6 1:5 0:35 1:9 0:7 1:5 0:34 1:9 0:9 1:5 0:33 1:8 0:10 1:5 0:33 1:8 0:11 1:4 0:33 1:7 0:12 1:4 0:33 1:6 0:13 1:4 0:32 1:7 0:12 1:5 0:32 1:7 0:12 1:5 0:32 1:6 0:13 1:5 0:32 1:6 0:13 1:5 0:32 1:6 0:12 1:6 0:32 1:5 0:13 1:6 0:32 1:5 0:13 1:6 0:32 1:5 0:12 1:7 0:32 1:5 0:11 1:8 0:32 1:5 0:11 1:7 0:33 1:5 0:10 1:8 0:33 1:5 0:9 1:9 0:33 1:5 0:8 1:10 0:33 1:5 0:8 1:9 0:34 1:5 0:7 1:10 0:34 1:5 0:6 1:11 0:34 1:5 0:5 1:11 0:35 1:5 0:4 1:12 0:35 1:5 0:3 1:13 0:36 1:4 0:2 1:13 0:37 1:4 0:1 1:14 0:37 1:18 0:38 1:17 0:39 1:17 0:38 1:17 0:38 1:17 0:38 1:18 0:36 1:19 0:36 1:19 0:36 1:19 0:36 1:19 0:36 1:20 0:35 1:20 0:35 1:20 0:35 1:20 0:35 1:20 0:35 1:21 0:34 1:22 0:33 1:18 0:1 1:4 0:33 1:17 0:2 1:4 0:32 1:17 0:3 1:5 0:30 1:17 0:4 1:5 0:29 1:16 0:7 1:4 0:29 1:15 0:8 1:4 0:28 1:15 0:9 1:4 0:27 1:15 0:10 1:5 0:26 1:14 0:11 1:5 0:25 1:14 0:12 1:5 0:25 1:13 0:14 1:4 0:24 1:13 0:15 1:11 0:17 1:12 0:14 1:16 0:14 1:12 0:11 1:21 0:11 1:12 0:11 1:24 0:9 1:11 0:11 1:26 0:8 1:10 0:10 1:29 0:6 1:11 0:10 1:30 0:5 1:10 0:10 1:32 0:4 1:10 0:9 1:34 0:3 1:9 0:9 1:35 0:3 1:9 0:9 1:36 0:2 1:8 0:9 1:37 0:2 1:8 0:9 1:19 0:2 1:17 0:1 1:8 0:9 1:12 0:3 1:4 0:5 1:14 0:1 1:8 0:9 1:10 0:5 1:5 0:6 1:21 0:8 1:10 0:6 1:5 0:7 1:19 0:9 1:9 0:7 1:5 0:8 1:18 0:9 1:8 0:9 1:4 0:9 1:17 0:9 1:8 0:9 1:4 0:10 1:16 0:9 1:7 0:10 1:5 0:9 1:16 0:9 1:7 0:10 1:5 0:10 1:15 0:10 1:6 0:10 1:5 0:10 1:8 0:1 1:6 0:10 1:6 0:10 1:5 0:10 1:8 0:1 1:7 0:9 1:6 0:11 1:4 0:10 1:8 0:1 1:7 0:9 1:6 0:11 1:4 0:10 1:8 0:2 1:6 0:10 1:6 0:10 1:5 0:10 1:7 0:2 1:7 0:9 1:6 0:10 1:5 0:10 1:7 0:2 1:7 0:10 1:6 0:9 1:5 0:9 1:7 0:4 1:7 0:10 1:6 0:8 1:5 0:9 1:7 0:4 1:7 0:10 1:7 0:8 1:4 0:9 1:7 0:5 1:7 0:10 1:8 0:6 1:4 0:8 1:7 0:7 1:7 0:11 1:7 0:5 1:5 0:7 1:7 0:8 1:7 0:12 1:5 0:5 1:5 0:6 1:7 0:9 1:8 0:14 1:1 0:6 1:5 0:5 1:7 0:11 1:8 0:20 1:5 0:4 1:7 0:13 1:9 0:19 1:4 0:3 1:8 0:15 1:9 0:17 1:4 0:1 1:8 0:18 1:10 0:15 1:12 0:20 1:13 0:10 1:12 0:23 1:31 0:27 1:27 0:32 1:22 0:39 1:12 0:1 1:4 0:52 1:5 0:51 1:5 0:51 1:5 0:51 1:5 0:52 1:4 0:52 1:5 0:51 1:5 0:51 1:5 0:51 1:5 0:51 1:5 0:29 1:8 0:15 1:4 0:27 1:11 0:14 1:4 0:26 1:13 0:13 1:5 0:24 1:15 0:12 1:5 0:24 1:16 0:11 1:5 0:23 1:17 0:11 1:5 0:23 1:17 0:11 1:5 0:23 1:17 0:11 1:5 0:23 1:17 0:11 1:5 0:23 1:17 0:11 1:5 0:23 1:17 0:11 1:4 0:24 1:17 0:10 1:5 0:24 1:17 0:10 1:5 0:24 1:16 0:11 1:5 0:24 1:16 0:10 1:5 0:26 1:13 0:11 1:6 0:26 1:12 0:12 1:5 0:28 1:8 0:13 1:7 0:28 1:8 0:12 1:7 0:30 1:9 0:7 1:9 0:32 1:23 0:35 1:19 0:39 1:15 0:45 1:8 0:25 <span class="nt">&lt;/Mask&gt;</span>
+<span class="nt">&lt;Data&gt;</span>
+<span class="nt">&lt;DataItem</span> <span class="na">key=</span><span class="s">"dorico_event_id"</span> <span class="na">type=</span><span class="s">"int"</span><span class="nt">&gt;</span>908<span class="nt">&lt;/DataItem&gt;</span>
+<span class="nt">&lt;DataItem</span> <span class="na">key=</span><span class="s">"clef_type"</span> <span class="na">type=</span><span class="s">"str"</span><span class="nt">&gt;</span>kGClef<span class="nt">&lt;/DataItem&gt;</span>
+<span class="nt">&lt;DataItem</span> <span class="na">key=</span><span class="s">"clef_hotspot"</span> <span class="na">type=</span><span class="s">"str"</span><span class="nt">&gt;</span>G4<span class="nt">&lt;/DataItem&gt;</span>
+<span class="nt">&lt;DataItem</span> <span class="na">key=</span><span class="s">"clef_required_stave_lines"</span> <span class="na">type=</span><span class="s">"int"</span><span class="nt">&gt;</span>5<span class="nt">&lt;/DataItem&gt;</span>
+<span class="nt">&lt;DataItem</span> <span class="na">key=</span><span class="s">"clef_stave_position"</span> <span class="na">type=</span><span class="s">"int"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/DataItem&gt;</span>
+<span class="nt">&lt;DataItem</span> <span class="na">key=</span><span class="s">"staff_id"</span> <span class="na">type=</span><span class="s">"int"</span><span class="nt">&gt;</span>0<span class="nt">&lt;/DataItem&gt;</span>
+<span class="nt">&lt;/Data&gt;</span>
+<span class="nt">&lt;/Node&gt;</span>
+</code></pre></div></div>
+<!-- ![clef](/assets/img/clef.png) -->
+
+<p>Time signatures will include the event ID, time signature description, for example, 3/2 (h, 1+1+1).
+<br /></p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Node&gt;</span>
+    <span class="nt">&lt;Id&gt;</span>511<span class="nt">&lt;/Id&gt;</span>
+    <span class="nt">&lt;ClassName&gt;</span>timeSig4<span class="nt">&lt;/ClassName&gt;</span>
+    <span class="nt">&lt;Top&gt;</span>467<span class="nt">&lt;/Top&gt;</span>
+    <span class="nt">&lt;Left&gt;</span>828<span class="nt">&lt;/Left&gt;</span>
+    <span class="nt">&lt;Width&gt;</span>36<span class="nt">&lt;/Width&gt;</span>   
+    <span class="nt">&lt;Height&gt;</span>42<span class="nt">&lt;/Height&gt;</span>
+    <span class="nt">&lt;Mask&gt;</span>0:11 1:16 0:20 1:16 0:20 1:15 
+    ...
+    0:21 1:15 0:21 1:14 0:22 1:13 0:22 
+    <span class="nt">&lt;Data&gt;</span>
+        <span class="nt">&lt;DataItem</span> <span class="na">key=</span><span class="s">"dorico_event_id"</span> <span class="na">type=</span><span class="s">"int"</span><span class="nt">&gt;</span>-1<span class="nt">&lt;/DataItem&gt;</span>
+        <span class="nt">&lt;DataItem</span> <span class="na">key=</span><span class="s">"time_signature_description"</span> <span class="na">type=</span><span class="s">"str"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/Data&gt;</span>
+<span class="nt">&lt;/Node&gt;</span>
+</code></pre></div></div>
+
+<!-- ![timesig](/assets/img/timesig.png) -->
+
+<p>Flags, if they are part of grace notes, will have a boolean value set to True. Slurs and ties have their event IDs, while barlines, rests, accidentals, augmentation dots, stems do not have such information. Beams will not have their event ID; instead, they will have a list of the event IDs their respective noteheads have.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Node&gt;</span>
+<span class="nt">&lt;Id&gt;</span>69<span class="nt">&lt;/Id&gt;</span>
+<span class="nt">&lt;ClassName&gt;</span>kStaffLine<span class="nt">&lt;/ClassName&gt;</span>
+<span class="nt">&lt;Top&gt;</span>666<span class="nt">&lt;/Top&gt;</span>
+<span class="nt">&lt;Left&gt;</span>299<span class="nt">&lt;/Left&gt;</span>
+<span class="nt">&lt;Width&gt;</span>2001<span class="nt">&lt;/Width&gt;</span>
+<span class="nt">&lt;Height&gt;</span>3<span class="nt">&lt;/Height&gt;</span>
+<span class="nt">&lt;Mask&gt;</span>0:0 1:6003 <span class="nt">&lt;/Mask&gt;</span>
+<span class="nt">&lt;Data&gt;</span>
+<span class="nt">&lt;DataItem</span> <span class="na">key=</span><span class="s">"staff_id"</span> <span class="na">type=</span><span class="s">"int"</span><span class="nt">&gt;</span>0<span class="nt">&lt;/DataItem&gt;</span>
+<span class="nt">&lt;/Data&gt;</span>
+<span class="nt">&lt;/Node&gt;</span>
+</code></pre></div></div>
+<!-- ![staffline](/assets/img/staff-line.png) -->
+
+<p>A detailed <strong>table of what each objet includes for musical features</strong> is shown below. Scroll right for all attributes.</p>
+
+<div class="table-wrapper">
+
+  <table>
+    <thead>
+      <tr>
+        <th>Class</th>
+        <th>Frequency</th>
+        <th>dorico_event_id</th>
+        <th>clef_type</th>
+        <th>clef_hotspot</th>
+        <th>lef_required_stave_lines</th>
+        <th>clef_stave_position</th>
+        <th>staff_id</th>
+        <th>dorico_event_ids</th>
+        <th>grace_note</th>
+        <th>duration_beats</th>
+        <th>onset_beats</th>
+        <th>pitch_octave</th>
+        <th>midi_pitch_code</th>
+        <th>normalized_pitch_step</th>
+        <th>time_signature_description</th>
+        <th>text</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>accidentalDoubleFlat</td>
+        <td>244</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>accidentalDoubleSharp</td>
+        <td>330</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>accidentalFlat</td>
+        <td>12705</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>accidentalKomaFlat</td>
+        <td>5</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>accidentalKomaSharp</td>
+        <td>5</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>accidentalNatural</td>
+        <td>11137</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>accidentalQuarterToneFlatStein</td>
+        <td>162</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>accidentalQuarterToneSharpStein</td>
+        <td>191</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>accidentalSharp</td>
+        <td>12908</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>accidentalThreeQuarterTonesFlatZimmermann</td>
+        <td>1</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>accidentalThreeQuarterTonesSharpStein</td>
+        <td>27</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>accidentalTripleFlat</td>
+        <td>1</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>accidentalTripleSharp</td>
+        <td>1</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>articAccentAbove</td>
+        <td>1477</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>articAccentBelow</td>
+        <td>1916</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>articMarcatoAbove</td>
+        <td>278</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>articMarcatoBelow</td>
+        <td>34</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>articStaccatissimoAbove</td>
+        <td>536</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>articStaccatissimoBelow</td>
+        <td>414</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>articStaccatoAbove</td>
+        <td>5018</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>articStaccatoBelow</td>
+        <td>6108</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>articTenutoAbove</td>
+        <td>823</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>articTenutoBelow</td>
+        <td>735</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>augmentationDot</td>
+        <td>2762</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>barline</td>
+        <td>28142</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>beam</td>
+        <td>52539</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>cClef</td>
+        <td>1161</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>dynamicFF</td>
+        <td>242</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>dynamicFFF</td>
+        <td>88</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>dynamicFFFF</td>
+        <td>4</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>dynamicForte</td>
+        <td>777</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>dynamicFortePiano</td>
+        <td>60</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>dynamicForzando</td>
+        <td>35</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>dynamicMF</td>
+        <td>1803</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>dynamicMP</td>
+        <td>185</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>dynamicPiano</td>
+        <td>3987</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>dynamicPP</td>
+        <td>1807</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>dynamicPPP</td>
+        <td>93</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>dynamicPPPP</td>
+        <td>13</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>dynamicRinforzando2</td>
+        <td>5</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>dynamicSforzato</td>
+        <td>236</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>dynamicSforzatoFF</td>
+        <td>6</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>dynamicText</td>
+        <td>110</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+      </tr>
+      <tr>
+        <td>fClef</td>
+        <td>3543</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>flag16thDown</td>
+        <td>430</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>flag16thUp</td>
+        <td>18245</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>flag32ndDown</td>
+        <td>31</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>flag32ndUp</td>
+        <td>7264</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>flag64thUp</td>
+        <td>10</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>flag8thDown</td>
+        <td>3672</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>flag8thUp</td>
+        <td>8113</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>gClef</td>
+        <td>12278</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>gradualDynamic</td>
+        <td>7084</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>kStaffLine</td>
+        <td>160426</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>mensuralNoteheadMinimaWhite</td>
+        <td>9</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>noteheadBlack</td>
+        <td>247741</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>noteheadDiamondWhole</td>
+        <td>8</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>noteheadDoubleWholeSquare</td>
+        <td>3</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>noteheadHalf</td>
+        <td>8648</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>noteheadTriangleUpBlack</td>
+        <td>27</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>noteheadTriangleUpHalf</td>
+        <td>3</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>noteheadWhole</td>
+        <td>1502</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>noteheadXBlack</td>
+        <td>81</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>ornamentMordent</td>
+        <td>7</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>ornamentTrill</td>
+        <td>58</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>ornamentTurn</td>
+        <td>6</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>rest</td>
+        <td>4</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>rest16th</td>
+        <td>29411</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>rest32nd</td>
+        <td>10218</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>rest64th</td>
+        <td>4</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>rest8th</td>
+        <td>24124</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>restHalf</td>
+        <td>1376</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>restQuarter</td>
+        <td>13223</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>restWhole</td>
+        <td>14382</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>slur</td>
+        <td>13928</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>stem</td>
+        <td>227889</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>systemicBarline</td>
+        <td>2078</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>tie</td>
+        <td>8626</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>timeSig1</td>
+        <td>2</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>timeSig2</td>
+        <td>1084</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>timeSig3</td>
+        <td>1203</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>timeSig4</td>
+        <td>2674</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>timeSig5</td>
+        <td>507</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>timeSig6</td>
+        <td>246</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>timeSig7</td>
+        <td>125</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>timeSig8</td>
+        <td>1661</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>timeSig9</td>
+        <td>79</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>timeSigCommon</td>
+        <td>206</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>timeSigCutCommon</td>
+        <td>113</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>timeSignatureComponent</td>
+        <td>443</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>tupletBracket</td>
+        <td>4970</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>tupletText</td>
+        <td>4900</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+      </tr>
+      <tr>
+        <td>unpitchedPercussionClef1</td>
+        <td>223</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>wiggleTrill</td>
+        <td>45</td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>x</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<p><a href="#Images-of-scores"> Images of scores </a></p>
+
+<p>Given that each project can have one or more pages, we use the mono png export from Dorico at 300 DPI. Each image is named after the OMR metadata xml file, with the number suffix, starting 001. Images are of dimension 2475 × 3504 pixels and are binarised. An example of an image is given below. All these images are binarised and ready to use.</p>
+
+<p><img src="/assets/img/Bartok%20-%20String%20Quartet%205%20mvt%203-034.png" alt="clef" /></p>
+
+<p><a href="#MIDI"> MIDI </a></p>
+
+<p>MIDI (Musical Instrument Digital Interface) standard file provides a standardized file format way for music sequences to be saved, transported, and opened in other systems. They are characterised by their compact size which led to their widespread use in computers. They are intended for universal use and have information such as note values, timing and track name. We want to include such files in our dataset since MIDI is one of the end file formats retrieved from some OMR architecture. We believe that it is essential to include such files that could later on may be used for multi-modal learning in OMR as well.</p>
+
+<p><img src="/assets/img/dorico-midi.png" alt="Dorico-midi" /></p>
+
+<p><a href="#MEI"> Music Encoding Initiative (MEI) </a></p>
+
+<p>Except for MusicXML for we go one step further to also providing its respective <a href="https://music-encoding.org/">Music Encoding Initiative (MEI)</a> files. The model underlying MEI recognizes four distinct aspects of music notation: logical; gestural; visual; and analytical. The logical domain includes the musical content or structure including pitches, time values, articulations, dynamics, and all other elements—defined as the symbols that communicate the composer’s intentions. The gestural domain relates to a performed interpretation of the logical domain (i.e., it encodes information that may be added by a performer such as explicit realizations of “swing” or rubato). The visual domain describes the contributions of an editor, engraver, or typesetter, and encodes information about the physical appearance of the score, such as symbol locations, page layout, or font. Finally, the analytical domain covers commentary and analysis of the music document in any of the three previous domains.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="cp">&lt;?xml-model href="https://music-encoding.org/schema/4.0.0/mei-all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?&gt;</span>
+<span class="cp">&lt;?xml-model href="https://music-encoding.org/schema/4.0.0/mei-all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?&gt;</span>
+<span class="nt">&lt;mei</span> <span class="na">xmlns=</span><span class="s">"http://www.music-encoding.org/ns/mei"</span> <span class="na">meiversion=</span><span class="s">"4.0.0"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;meiHead&gt;</span>
+      <span class="nt">&lt;fileDesc&gt;</span>
+         <span class="nt">&lt;titleStmt&gt;</span>
+            <span class="nt">&lt;title&gt;</span>beam groups 3<span class="nt">&lt;/title&gt;</span>
+            <span class="nt">&lt;respStmt</span> <span class="nt">/&gt;</span>
+         <span class="nt">&lt;/titleStmt&gt;</span>
+         <span class="nt">&lt;pubStmt&gt;&lt;date</span> <span class="na">isodate=</span><span class="s">"2021-06-14"</span> <span class="na">type=</span><span class="s">"encoding-date"</span><span class="nt">&gt;</span>2021-06-14<span class="nt">&lt;/date&gt;</span>
+         <span class="nt">&lt;/pubStmt&gt;</span>
+      <span class="nt">&lt;/fileDesc&gt;</span>
+      <span class="nt">&lt;encodingDesc</span> <span class="na">xml:id=</span><span class="s">"encodingdesc-0000001420266469"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;appInfo</span> <span class="na">xml:id=</span><span class="s">"appinfo-0000001827384277"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;application</span> <span class="na">xml:id=</span><span class="s">"application-0000000862295293"</span> <span class="na">isodate=</span><span class="s">"2021-06-14T15:00:01"</span> <span class="na">version=</span><span class="s">"3.5.0-dev-118873d"</span><span class="nt">&gt;</span>
+               <span class="nt">&lt;name</span> <span class="na">xml:id=</span><span class="s">"name-0000002103025164"</span><span class="nt">&gt;</span>Verovio<span class="nt">&lt;/name&gt;</span>
+               <span class="nt">&lt;p</span> <span class="na">xml:id=</span><span class="s">"p-0000001992846044"</span><span class="nt">&gt;</span>Transcoded from MusicXML<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/application&gt;</span>
+         <span class="nt">&lt;/appInfo&gt;</span>
+      <span class="nt">&lt;/encodingDesc&gt;</span>
+   <span class="nt">&lt;/meiHead&gt;</span>
+   <span class="nt">&lt;music&gt;</span>
+      <span class="nt">&lt;body&gt;</span>
+         <span class="nt">&lt;mdiv</span> <span class="na">xml:id=</span><span class="s">"mdiv-0000001025466895"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;score</span> <span class="na">xml:id=</span><span class="s">"score-0000001308189520"</span><span class="nt">&gt;</span>
+               <span class="nt">&lt;scoreDef</span> <span class="na">xml:id=</span><span class="s">"scoredef-0000000993314183"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;staffGrp</span> <span class="na">xml:id=</span><span class="s">"staffgrp-0000000471437396"</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;staffDef</span> <span class="na">xml:id=</span><span class="s">"P1"</span> <span class="na">n=</span><span class="s">"1"</span> <span class="na">lines=</span><span class="s">"5"</span> <span class="na">ppq=</span><span class="s">"12"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;label</span> <span class="na">xml:id=</span><span class="s">"label-0000000781857015"</span><span class="nt">&gt;</span>P 1<span class="nt">&lt;/label&gt;</span>
+                        <span class="nt">&lt;clef</span> <span class="na">xml:id=</span><span class="s">"clef-0000000149139464"</span> <span class="na">shape=</span><span class="s">"G"</span> <span class="na">line=</span><span class="s">"2"</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;keySig</span> <span class="na">xml:id=</span><span class="s">"keysig-0000000931258970"</span> <span class="na">mode=</span><span class="s">"major"</span> <span class="na">sig=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;meterSig</span> <span class="na">xml:id=</span><span class="s">"msig-0000002113427645"</span> <span class="na">count=</span><span class="s">"2"</span> <span class="na">unit=</span><span class="s">"4"</span> <span class="nt">/&gt;</span>
+                     <span class="nt">&lt;/staffDef&gt;</span>
+                  <span class="nt">&lt;/staffGrp&gt;</span>
+               <span class="nt">&lt;/scoreDef&gt;</span>
+...
+      <span class="nt">&lt;/body&gt;</span>
+   <span class="nt">&lt;/music&gt;</span>
+<span class="nt">&lt;/mei&gt;</span>
+</code></pre></div></div>
+
+<h2 id="-combining-doremi-with-muscima-and-deepscores-"><a href="#combining"> Combining DOReMi with Muscima++ and Deepscores </a></h2>
+
+<p>Recently, researchers have been working on bringing their datasets together, namely Muscima++ [4] and DeepScores [9], to improve compatibility. Muscima++ contains handwritten music, while DeepScores is a typeset music dataset, both of which can be used in object detection. Harmonising them aids the goal of creating a reference dataset. With the motivation to support this goal and compare and use these datasets in future experiments, DoReMi is easily harmonised with Muscima++ and DeepScores.</p>
+
+<h2 id="initial-data-collection-1"><a href="">Initial Data Collection</a></h2>
+
+<p>The dataset is derived from scores originally used for testing music notation software. This includes real-world scores in addition to synthetic scores built to test particular engraving use cases.</p>
+
+<p>The process of creating DoReMI using Dorico starts by creating a meta-picture of a single glyph or drawable primitive (slurs, lines, musical symbols) to allow generation of bounding boxes and pixel masks at the origin of the coordinate system y-down \footnote{The origin is in the top-left where the x-axis extends to the right and the y-axis extends downwards}. Rendering them at the origin ensures minimisation of the variations introduced by anti-aliasing artefacts. The vector-based glyph or primitive is then rasterised to a monochrome pixel-based image. Sub-pixel positions might introduce some variations and shifts in the bounding boxes that are relocated to the original drawn positions. However, bounding boxes are accurate enough for all the objects, except for some shift in the staff lines. During rasterisation, some staff lines become thicker than the others, sometimes falling out of the bounding box. Such inconsistencies are easily optically noticed given the even spaced nature of staff lines and can be minimised at the cost of increasing the resolution (DPI). Finally, the images are exported as PNGs.</p>
+
+<p>Dorico has a sophisticated internal representation and engraving engine for musical data at the drawing stage for efficiency. This results in significant challenges in reconnecting the primitives ultimately drawn to their original semantic sources. The addition of higher-level music attributes retrieved from Dorico to the metadata allows for the future use in the music reconstruction stage.
+It is anticipated that we would iterate through the generation process by adding new features that would benefit the recognition score. On a practical level, we made a minor modification to allow for the logical grouping of pages into a single XML file. During data preprocessing, XML files were then separated by page (image).</p>
+
+<h2 id="data-preparation-and-analysis-1"><a href="">Data Preparation and analysis</a></h2>
+
+<p>The number of classes in the dataset is 94 as shown in the image below. 
+<img src="/assets/img/classes.png" alt="classes" /></p>
+
+<h2 id="publication-and-sharing-1"><a href="">Publication and Sharing</a></h2>
+
+<p>The dataset including only copy right free scores is already published in <a href="https://github.com/steinbergmedia/DoReMi/releases/tag/v1.0">this github release</a>.</p>
+
+<h2 id="long-term-management-1"><a href="">Long-term Management</a></h2>
+
+<p><a href="./">back</a></p>
+:ET

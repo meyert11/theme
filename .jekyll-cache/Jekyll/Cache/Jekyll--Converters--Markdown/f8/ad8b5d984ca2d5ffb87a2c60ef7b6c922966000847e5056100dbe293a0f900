@@ -1,0 +1,144 @@
+I"Ç <ul>
+  <li><a href="www.elonashatri.co.uk">Personal Website</a></li>
+  <li><a href="http://eecs.qmul.ac.uk/profiles/shatrielona-1.html">School Page</a></li>
+  <li><a href="https://medium.com/@e.shatri1">Medium</a></li>
+</ul>
+
+<p>Hello there!</p>
+
+<p>Iâ€™m a PhD candidate at the UKRI Centre for Doctoral Training in Artificial Intelligence and Music (AIM). I am part of Centre for Digital Music (C4DM) research group at Queen Mary University of London.</p>
+
+<p>My research interest is mainly Optial Music Recogntion as well as other MIR related subfields. My goal is to have computers read sheet music computationally. I started working in this problem in September 2019 when I was granted the studentship from QMUL and Steinberg GmBH with which we collaborate closely.</p>
+
+<p>My work focuses on how can we bring new machine learning solutions to the field of OMR and achieve an end-to-end solution to the problem.</p>
+
+<p>Optical Music Recognition (OMR) is concerned with digitizing music sheets into a machine-readable format. Being able to compose, transcribe and edit music by means of taking a picture of a music sheet, would put musician?s workload at ease. Such automation would allow musicians to use search-ability and to perform quantitative measures in the musical pieces. This problem comes down to a simple, how can computers be made to read music. The output to this process being a machine-readable file such as MIDI, MusicXML, MEI files. The objective is outputting semantic mark-up identifying as many notational elements as possible, along with the relationship to their position in the original image.</p>
+
+<p>Prior solutions have used algorithmic approaches and have involved layers of algorithmic rules applied to traditional feature detection techniques such as edge detection. One of the approaches we want to further investigate is using deep neural networks to solve the problem. Before going into this step another very important processing should be performed, that is, tackling the quality of the input picture of the music sheet. Image preprocessing steps are to be taken which will later help in the training step.</p>
+
+<p>An OMR pipeline should be able to capture the right position and the relationships between two notes and its distinctive features. Pacha et al. (2018) proposed an end-to-end trainable object detector that can detect almost the full vocabulary of modern music notation in handwritten scores. Using deep convolutional networks in a dataset with symbol-level notations they achieve a mean average precision up to 80 %.</p>
+
+<p>The OMR pipeline has four main blocks, and we want to tackle them one by one, using a deep learning technique and compare to the already existing techniques. If the DL techniques show improvements, then an end-to-end network is the final goal of our work. Since the existing datasets do not offer enough classes and data, the first step for use would be data augmentation. This will be done using the digitized musical sheets from music notation software Dorico, having this way a ground truth. These sheets will be subject to image degradation techniques, using the depredated images as inputs in our pipeline. The next step would be designing the methodology for object recognition and reconstruction using the deep neural network approach.</p>
+
+<h2 id="doremi-dataset"><a href="./doremi-dataset.html">DoReMi Dataset</a></h2>
+<p>We recently published our DoReMi dataset at the <a href="https://sites.google.com/view/worms2021/home">3rd International Workshop on Reading Music Systems 2021</a>. We made our dataset available in <a href="https://github.com/steinbergmedia/DoReMi/releases/tag/v1.0">this page</a> open for anyone to use it, experiment with it and maybe suggesting new ways to represent these data.</p>
+
+<p>Documentation is also availabe in the same repository of the data release.</p>
+
+<h2 id="papers">Papers</h2>
+
+<ul>
+  <li><a href="https://www.tenor-conference.org/proceedings/2020/23_Shatri_tenor20.pdf">Optical Music Recogntion: State of the Art and Major Challenges at TENOR2020-2021</a></li>
+  <li><a href="https://sites.google.com/view/worms2021/home">DoReMi: First glance at a universal OMR dataset - WoRMS2021</a></li>
+</ul>
+
+<h2 id="blogposts">Blogposts</h2>
+
+<ul>
+  <li><a href="https://towardsdatascience.com/what-is-optical-music-recognition-6515d8a53e01">What is Optical Music Recognition?</a></li>
+  <li><a href="https://medium.com/analytics-vidhya/a-review-on-super-resolution-2c78cd77885a">A review on Super-Resolution</a></li>
+  <li><a href="https://towardsdatascience.com/a-review-of-generative-adversarial-networks-9af21e94bda4">A review of Generative Adversarial Networks</a></li>
+  <li><a href="https://towardsdatascience.com/optical-music-recognition-state-of-the-art-and-major-challenges-aa100923c78d">Optical Music Recognition: State of the Art and Major Challenges</a></li>
+</ul>
+
+<h2 id="teaching">Teaching</h2>
+
+<h3 id="machine-learning-postgraduate-2020">Machine Learning (Postgraduate) 2020</h3>
+<p>The aim of the module is to give students an understanding of machine learning methods, including pattern recognition, clustering and neural networks, and to allow them to apply such methods in a range of areas.</p>
+
+<h3 id="machine-learning-for-visual-data-analysis-postgraduate-2021">Machine Learning for Visual Data Analysis (Postgraduate) 2021</h3>
+<p>The module will cover the following topics: The Discrete Fourier Transform and the frequency content of images. The design and use of Gabor filters. Principal Component Analysis for denoising and compression. Unsupervised classification via feature space clustering. Texture segmentation with Gabor filters.</p>
+
+<h3 id="rmri-research-methods-and-responsible-methods-postgraduate-2020">RMRI Research Methods and Responsible Methods (Postgraduate) 2020</h3>
+
+<p>This module will teach generic high-level research and transferable skills applicable to pure and applied research in computer science and engineering. The module fosters the development of practical understanding of established approaches, methods and techniques of research; conceptual understanding that enables critical and rigorous evaluation of research; ability to communicate ideas and conclusions logically and fluently in both written and oral contexts.</p>
+
+<h2 id="affiliations">Affiliations</h2>
+
+<ul>
+  <li><a href="https://aim.qmul.ac.uk/">UKRI Centre for Doctoral Training in Artificial Intelligence and Music</a></li>
+  <li><a href="http://c4dm.eecs.qmul.ac.uk/">Centre for Digital Msusic</a></li>
+  <li><a href="http://cis.eecs.qmul.ac.uk/">Centre for Intelligent Sensing</a></li>
+  <li><a href="https://www.steinberg.net/en/home.html">Steinberg</a></li>
+</ul>
+
+<h2 id="education">Education</h2>
+
+<ul>
+  <li>
+    <p>2019 - Currently Ph.D. on Optical Music Recognition - Queen Mary University of London</p>
+  </li>
+  <li>
+    <p>2017 - 2019 MSc in Information Systems and Applications - National Tsing Hua University</p>
+  </li>
+  <li>
+    <p>2013 - 2017 BSc in Telecommunications: Faculty of Electrical and Computer Engineering, University of Prishtina</p>
+  </li>
+</ul>
+
+<!-- ##### Header 5
+
+1.  This is an ordered list following a header.
+2.  This is an ordered list following a header.
+3.  This is an ordered list following a header.
+
+###### Header 6
+
+| head1        | head two          | three |
+|:-------------|:------------------|:------|
+| ok           | good swedish fish | nice  |
+| out of stock | good and plenty   | nice  |
+| ok           | good `oreos`      | hmm   |
+| ok           | good `zoute` drop | yumm  |
+
+### There's a horizontal rule below this.
+
+* * *
+
+### Here is an unordered list:
+
+*   Item foo
+*   Item bar
+*   Item baz
+*   Item zip
+
+### And an ordered list:
+
+1.  Item one
+1.  Item two
+1.  Item three
+1.  Item four
+
+### And a nested list:
+
+- level 1 item
+  - level 2 item
+  - level 2 item
+    - level 3 item
+    - level 3 item
+- level 1 item
+  - level 2 item
+  - level 2 item
+  - level 2 item
+- level 1 item
+  - level 2 item
+  - level 2 item
+- level 1 item
+
+### Small image
+
+![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
+
+### Large image
+
+![Branching](https://guides.github.com/activities/hello-world/branching.png)
+
+
+### Definition lists can be used with HTML syntax. -->
+
+<h2 id="contact">Contact</h2>
+<ul>
+  <li>e.shatri1@gmail.com</li>
+  <li>e.shatri@qmul.ac.uk</li>
+</ul>
+:ET
