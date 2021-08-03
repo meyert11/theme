@@ -3,7 +3,7 @@ layout: post-default
 ---
 ![worms2021]({% link /assets/img/worms2021.png %})
 
-The third edition of The International Workshop on Reading Music Systems (WoRMS) was held in a hybrid live/virtual setting last Friday, 23rd of July. It brought together many researchers working in Optical Music Recognition (OMR) and also from the industry. This edition 11 papers researching a broad list of topics in OMR were presented, and an outstanding keynote from Anthony Wilkes (Organum Ltd) was talking on The design of ReadScoreLib. 
+The third edition of The International Workshop on Reading Music Systems (WoRMS) was held in a hybrid live/virtual setting last Friday, 23rd of July. It brought together many researchers working in Optical Music Recognition (OMR) and also from the industry. This edition 11 papers researching a broad list of topics in OMR were presented, and an [outstanding keynote from Anthony Wilkes (Organum Ltd)](https://drive.google.com/file/d/1IDgOaW8tGxJt9Top7x7GSZXLsAo-XVcb/view) was talking on The design of ReadScoreLib. 
 
 Below I will try to summarise some of the papers presented. 
 
