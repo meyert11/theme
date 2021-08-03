@@ -2,9 +2,10 @@
 layout: default
 ---
 
-* [Personal Website](www.elonashatri.co.uk)
-* [School Page](http://eecs.qmul.ac.uk/profiles/shatrielona-1.html)
-* [Medium](https://medium.com/@e.shatri1)
+## News
+* [Highlights from WoRMS-2021 3rd edition](./WoRMS2021.html)
+
+## About Me 
 
 Hello there!
 
@@ -40,7 +41,6 @@ Documentation is also availabe in the same repository of the data release.
 ## Blogposts
 
 * [Highlights from WoRMS-2021 3rd edition](./WoRMS2021.html)
-
 *   [What is Optical Music Recognition?](https://towardsdatascience.com/what-is-optical-music-recognition-6515d8a53e01)
 *   [A review on Super-Resolution](https://medium.com/analytics-vidhya/a-review-on-super-resolution-2c78cd77885a)
 *   [A review of Generative Adversarial Networks](https://towardsdatascience.com/a-review-of-generative-adversarial-networks-9af21e94bda4)
@@ -57,6 +57,13 @@ The module will cover the following topics: The Discrete Fourier Transform and t
 ### RMRI Research Methods and Responsible Methods (Postgraduate) 2020
 
 This module will teach generic high-level research and transferable skills applicable to pure and applied research in computer science and engineering. The module fosters the development of practical understanding of established approaches, methods and techniques of research; conceptual understanding that enables critical and rigorous evaluation of research; ability to communicate ideas and conclusions logically and fluently in both written and oral contexts.
+
+
+
+
+* [School Page](http://eecs.qmul.ac.uk/profiles/shatrielona-1.html)
+* [Medium](https://medium.com/@e.shatri1)
+
 
 ## Affiliations
 
