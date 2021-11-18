@@ -40,7 +40,7 @@ Documentation is also availabe in the same repository of the data release.
 
 ## Blogposts
 
-*   [Favourites at ISMIR 2021](./2021-11-16-ismir-2021.html)
+*   [Favourites at ISMIR 2021](./2021-11-16-ismir-2021.md)
 *   [Highlights from WoRMS-2021 3rd edition](./WoRMS2021.html)
 *   [What is Optical Music Recognition?](https://towardsdatascience.com/what-is-optical-music-recognition-6515d8a53e01)
 *   [A review on Super-Resolution](https://medium.com/analytics-vidhya/a-review-on-super-resolution-2c78cd77885a)
