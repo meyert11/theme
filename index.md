@@ -11,7 +11,7 @@ layout: default
 *   [Optical Music Recogntion: State of the Art and Major Challenges at TENOR2020-2021](https://www.tenor-conference.org/proceedings/2020/23_Shatri_tenor20.pdf)
 *   [DoReMi: First glance at a universal OMR dataset - WoRMS2021](https://sites.google.com/view/worms2021/home)
 *   [https://sites.google.com/view/worms2022/proceedings](https://sites.google.com/view/worms2022/proceedings)
-*   [Work under double blind review]
+*   Journal work under double blind review
 
 ## About Me 
 
