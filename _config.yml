@@ -1,0 +1,8 @@
+title: Elona Shatri
+logo: /assets/img/image.png
+description: Personal Website
+# show_downloads: true
+google_analytics:
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-image-size
