@@ -10,8 +10,11 @@ layout: default
 
 *   [Optical Music Recogntion: State of the Art and Major Challenges at TENOR2020-2021](https://www.tenor-conference.org/proceedings/2020/23_Shatri_tenor20.pdf)
 *   [DoReMi: First glance at a universal OMR dataset - WoRMS2021](https://sites.google.com/view/worms2021/home)
-*   [https://sites.google.com/view/worms2022/proceedings](https://sites.google.com/view/worms2022/proceedings)
-*   Journal work under double blind review
+*   [CompldNet: Sheet Music Composer Identification using Deep Neural Network](https://arxiv.org/pdf/2211.13285.pdf#page=10)
+*   [Towards Artificially Generated Handwritten Sheet Music Datasets](https://arxiv.org/pdf/2311.04091.pdf#page=26)
+*   [Improving Sheet Music Recognition using Data Augmentation and Image Enhancement](https://arxiv.org/pdf/2311.04091.pdf#page=32)
+*   [Proceedings of the 4th International Workshop on Reading Music Systems](https://sites.google.com/view/worms2022/proceedings)
+*   [Proceedings of the 5th International Workshop on Reading Music Systems](https://arxiv.org/pdf/2311.04091)
 
 ## About Me 
 
@@ -54,16 +57,24 @@ Documentation is also availabe in the same repository of the data release.
 
 ## Teaching
 
-### Machine Learning (Postgraduate) 2020
-The aim of the module is to give students an understanding of machine learning methods, including pattern recognition, clustering and neural networks, and to allow them to apply such methods in a range of areas.
+### Data Mining (Postgraduate) 2023-2024 - Teaching Fellow
+Lecture and lab delivery, student support, marking, exam setting, admin and training/supervising new demonstrators.
 
-### Machine Learning for Visual Data Analysis (Postgraduate) 2021
-The module will cover the following topics: The Discrete Fourier Transform and the frequency content of images. The design and use of Gabor filters. Principal Component Analysis for denoising and compression. Unsupervised classification via feature space clustering. Texture segmentation with Gabor filters.
+### Profesional and Research Practices 2022-2023 - Teaching Assistant
+Lab delivery, student support, marking, general admin and training/supervising new demonstrators.
 
-### RMRI Research Methods and Responsible Methods (Postgraduate) 2020
+### Machine Learning (Postgrad) 2021-2022 - TA
+Delivering labs, student support, marking assignments and exams.
 
-This module will teach generic high-level research and transferable skills applicable to pure and applied research in computer science and engineering. The module fosters the development of practical understanding of established approaches, methods and techniques of research; conceptual understanding that enables critical and rigorous evaluation of research; ability to communicate ideas and conclusions logically and fluently in both written and oral contexts.
+### Machine Learning for Visual Data (Postgrad) 2021-2022 - TA
+Delivering labs, student support, marking assignments and exams.
 
+### Research Methods and Responsible Innovation (Postgrad) 2020-2022 - TA
+
+Designing and delivering labs and workshops on quantitative and qualitative statistics with R.
+
+### Data Mining (Undergrad and Postgrad) 2020-2022 - TA
+Delivering labs, student support, marking assignments and exams.
 
 
 
