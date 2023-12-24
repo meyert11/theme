@@ -8,7 +8,7 @@ Led development of end-to-end AI-powered invoice processing, leveraging NLP, OCR
 
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/subham0206/fraud_detection.git)
 
-<center><img src="images/Invoice Processing Snip.PNG"/></center>
+<center><img src="assets/img/user_account_management.PNG"/></center>
 
 ---
 ### Time Series Demand Forecasting
