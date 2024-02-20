@@ -29,6 +29,19 @@ Designed and implemented a forecasting algorithm for sterilization chamber capac
 <center><img src="assets/img/Sterilization Capacity Utilization.PNG"/></center>
 
 ---
+### Bike Sharing Demand Problem
+
+[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/subham0206/Subham_AI.git)
+
+Build a Multiple linear regression model to solve bike sharing problem for a company. 
+
+Business Goal: We were required to model the demand for shared bikes with the available independent variables. It will be used by the management to understand how exactly the demands vary with different features. They can accordingly manipulate the business strategy to meet the demand levels and meet the customer's expectations. Further, the model will be a good way for management to understand the demand dynamics of a new market.
+Check out the full code available in my collab notebook with better readability: https://drive.google.com/drive/folders/1OJj2GvCnni0lHHiVg7QTYrAnehOtMDt6?usp=sharing
+
+<center><img src="assets/img/demand_projection.JPG"/></center>
+
+---
+
 ### User's Account Provisioning/Deprovisioning
 
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/subham0206/Subham_AI.git)
