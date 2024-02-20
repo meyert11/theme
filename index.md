@@ -31,14 +31,21 @@ Designed and implemented a forecasting algorithm for sterilization chamber capac
 ---
 ### Bike Sharing Demand Problem
 
-[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/subham0206/Subham_AI.git)
+[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/subham0206/Bike-Sharing-Assigment.git)
 
-Build a Multiple linear regression model to solve bike sharing problem for a company. 
-
-Business Goal: We were required to model the demand for shared bikes with the available independent variables. It will be used by the management to understand how exactly the demands vary with different features. They can accordingly manipulate the business strategy to meet the demand levels and meet the customer's expectations. Further, the model will be a good way for management to understand the demand dynamics of a new market.
-Check out the full code available in my collab notebook with better readability: https://drive.google.com/drive/folders/1OJj2GvCnni0lHHiVg7QTYrAnehOtMDt6?usp=sharing
+Build a Multiple linear regression model to solve bike sharing problem for a company. We are required to build a shared bikes demand model with the available independent variables. It will be used by the management to understand how exactly the demands vary with different features. They can accordingly manipulate the business strategy to meet the demand levels and meet the customer's expectations. Further, the model will be a good way for management to understand the demand dynamics of a new market.
 
 <center><img src="assets/img/demand_projection.JPG"/></center>
+
+---
+### Lending Club CaseStudy
+
+[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/subham0206/LendingClubCaseStudy.git)
+
+Lending company wants to understand the driving factors (or driver variables) behind loan default, i.e. the variables which are strong indicators of default. The company can utilize this knowledge for its portfolio and risk assessment. This is an assignment provided by IIT B Upgrad program, It will give an idea about how real business problems are solved using EDA. In this case study, apart from applying the techniques i have learnt in EDA, I have also developed a basic understanding of risk analytics in banking and financial services and understand how data is used to minimise the risk of losing money while lending to customers.
+The dataset is obtained from lending club portal. It contains the complete loan data for all loans issued through the time period 2007 t0 2011.
+
+<center><img src="assets/img/lending club.JPG"/></center>
 
 ---
 
