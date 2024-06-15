@@ -2,7 +2,7 @@
 ---
 ## Machine learning
 
-### AI Powered Invoice Processing
+### Revolutionizing Pharmaceutical Logistics: AI-Powered Invoice Processing
 
 Led development of end-to-end AI-powered invoice processing, leveraging NLP, OCR, and RPA technologies, resulting in 5000+ man-hours saved and a 90% improvement in efficiency.
 
@@ -11,13 +11,24 @@ Led development of end-to-end AI-powered invoice processing, leveraging NLP, OCR
 <center><img src="assets/img/Invoice Processing Snip.PNG"/></center>
 
 ---
-### Time Series Demand Forecasting
+### Time Series Demand Forecasting For BDX
 
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/subham0206)
 
 Collaboratively developed a highly accurate multivariate demand forecasting model with BCG, utilizing tree-based ensemble models, feature engineering, and hyperparameter tuning. Achieved 80-85% forecast accuracy, resulting in reduced inventory levels, minimized backorders, and enhanced production planning efficiency.
 
 <center><img src="assets/img/time-series-forecasting.PNG"/></center>
+
+---
+### Detecting Effusions in Chest X-Ray Images Using Neural Networks
+
+[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/subham0206)
+
+This project leverages neural networks to analyze Chest X-Ray (CXR) images for identifying "effusion" (fluid in the lungs) versus 'nofinding' (normal). Key steps included standardizing image resolution, applying morphological operations, normalization, and augmentation for data pre-processing. The model was built using AUC as the evaluation metric and incorporated weighted cross-entropy to handle class imbalance.
+
+Thorough experiments were conducted, including ablation studies and hyperparameter tuning. The final model achieved 90% accuracy and 88% AUC, with significant improvements in the ROC curve due to the use of weighted cross-entropy. Technologies used include numpy, pathlib, keras, and tensorflow.
+
+<center><img src="assets/img/x-ray-classes.png"/></center>
 
 ---
 ### Deep Learning for Dermatology: Melanoma Detection with CNNs
