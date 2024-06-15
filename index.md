@@ -22,7 +22,7 @@ Collaboratively developed a highly accurate multivariate demand forecasting mode
 ---
 ### Detecting Effusions in Chest X-Ray Images Using Neural Networks
 
-[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/subham0206)
+[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/subham0206/Analysis-of-Chest-X-Ray-images.git)
 
 This project leverages neural networks to analyze Chest X-Ray (CXR) images for identifying "effusion" (fluid in the lungs) versus 'nofinding' (normal). Key steps included standardizing image resolution, applying morphological operations, normalization, and augmentation for data pre-processing. The model was built using AUC as the evaluation metric and incorporated weighted cross-entropy to handle class imbalance.
 
