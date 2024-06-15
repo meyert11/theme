@@ -17,7 +17,7 @@ Led development of end-to-end AI-powered invoice processing, leveraging NLP, OCR
 
 Collaboratively developed a highly accurate multivariate demand forecasting model with BCG, utilizing tree-based ensemble models, feature engineering, and hyperparameter tuning. Achieved 80-85% forecast accuracy, resulting in reduced inventory levels, minimized backorders, and enhanced production planning efficiency.
 
-<center><img src="assets/img/time-series-forecasting.png"/></center>
+<center><img src="assets/img/time-series-forecasting.PNG"/></center>
 
 ---
 ### Deep Learning for Dermatology: Melanoma Detection with CNNs
@@ -26,7 +26,7 @@ Collaboratively developed a highly accurate multivariate demand forecasting mode
 
 The project aims to build a CNN-based model for accurately detecting melanoma, a type of skin cancer responsible for 75% of skin cancer deaths, which can be deadly if not detected early. An automated solution that evaluates images and alerts dermatologists about the presence of melanoma has the potential to significantly reduce manual diagnostic efforts. The model achieved accuracy of 90% after addressing class imbalance through data augmentation. Technologies used include numpy, skimage, keras and tensorflow. The project steps involved data reading and understanding, dataset creation and visualization, model building and training, analyzing model overfit/underfit, applying data augmentation to resolve class imbalances, and training a final CNN model to accurately detect nine classes of melanoma.
 
-<center><img src="assets/img/melanoma.PNG"/></center>
+<center><img src="assets/img/melanoma.png"/></center>
 
 ---
 ### Sterilization Chamber Capacity Utilization Across BDX
