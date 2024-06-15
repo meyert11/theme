@@ -26,7 +26,7 @@ Collaboratively developed a highly accurate multivariate demand forecasting mode
 
 This project leverages neural networks to analyze Chest X-Ray (CXR) images for identifying "effusion" (fluid in the lungs) versus 'nofinding' (normal). Key steps included standardizing image resolution, applying morphological operations, normalization, and augmentation for data pre-processing. The model was built using AUC as the evaluation metric and incorporated weighted cross-entropy to handle class imbalance.
 
-Thorough experiments were conducted, including ablation studies and hyperparameter tuning. The final model achieved 90% accuracy and 88% AUC, with significant improvements in the ROC curve due to the use of weighted cross-entropy. Technologies used include numpy, pathlib, keras, and tensorflow.
+Thorough experiments were conducted, including ablation studies and hyperparameter tuning. The final model achieved 90% accuracy and 88% AUC, with significant improvements in the ROC curve due to the use of weighted cross-entropy. Technologies used include numpy, pathlib, ResNet, keras, and tensorflow.
 
 <center><img src="assets/img/x-ray-classes.png"/></center>
 
