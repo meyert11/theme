@@ -29,6 +29,19 @@ The CNN-based model I constructed accurately detects melanoma, a type of skin ca
 <center><img src="assets/img/melanoma.png"/></center>
 
 ---
+### Revolutionizing Customer Support: AI Model Uncovers True Drivers Behind Support Tickets
+
+[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/subham0206/Customer-Support-Ticket-Classification.git)
+
+Addressing challenges with unreliable CRM fields, our project focused on accurately classifying customer support tickets using advanced machine learning techniques. Leveraging the Customer Support Ticket Dataset from Kaggle, we utilized Python to preprocess and analyze the data, achieving a notable 92% accuracy in ticket classification.
+
+By implementing both unsupervised topic modeling and supervised classification approaches across 50 predefined topics, we uncovered key insights into global customer support trends. These insights were visualized in Power BI, providing interactive dashboards for stakeholders to navigate and understand ticket drivers effectively.
+
+This initiative not only enhances operational efficiency but also empowers global contact centers with actionable insights for informed decision-making and improved customer service delivery.
+
+<center><img src="assets/img/Screenshot 2024-06-15 195115.png"/></center>
+
+---
 ### Sterilization Chamber Capacity Utilization Across BDX
 
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/subham0206)
