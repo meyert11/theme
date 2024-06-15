@@ -20,6 +20,15 @@ Collaboratively developed a highly accurate multivariate demand forecasting mode
 <center><img src="assets/img/time-series-forecasting.PNG"/></center>
 
 ---
+### Deep Learning for Dermatology: Melanoma Detection with CNNs
+
+[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/subham0206/Melanoma-Detection-.git)
+
+The project aims to build a CNN-based model for accurately detecting melanoma, a type of skin cancer responsible for 75% of skin cancer deaths, which can be deadly if not detected early. An automated solution that evaluates images and alerts dermatologists about the presence of melanoma has the potential to significantly reduce manual diagnostic efforts. The model achieved accuracy of 90% after addressing class imbalance through data augmentation. Technologies used include numpy, skimage, keras and tensorflow. The project steps involved data reading and understanding, dataset creation and visualization, model building and training, analyzing model overfit/underfit, applying data augmentation to resolve class imbalances, and training a final CNN model to accurately detect nine classes of melanoma.
+
+<center><img src="assets/img/melanoma.PNG"/></center>
+
+---
 ### Sterilization Chamber Capacity Utilization Across BDX
 
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/subham0206)
