@@ -17,7 +17,7 @@ Led development of end-to-end AI-powered invoice processing, leveraging NLP, OCR
 
 Collaboratively developed a highly accurate multivariate demand forecasting model with BCG, utilizing tree-based ensemble models, feature engineering, and hyperparameter tuning. Achieved 80-85% forecast accuracy, resulting in reduced inventory levels, minimized backorders, and enhanced production planning efficiency.
 
-<center><img src="assets/img/time-series-forecasting.PNG"/></center>
+<center><img src="assets/img/time-series-forecasting.png"/></center>
 
 ---
 ### Deep Learning for Dermatology: Melanoma Detection with CNNs
