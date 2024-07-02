@@ -20,6 +20,17 @@ Collaboratively developed a highly accurate multivariate demand forecasting mode
 <center><img src="assets/img/time-series-forecasting.PNG"/></center>
 
 ---
+### Next-Gen Neural Networks: Revolutionizing Smart Appliance Interaction with Gesture Recognition
+
+[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/subham0206/Gesture-Recognition-Models-for-Smart-TV-Control.git)
+
+This project aimed to develop a smart TV feature for recognizing five user gestures: thumbs up, thumbs down, left swipe, right swipe, and stop. It involved testing various models using a dataset of short videos. The top performer was transfer learning with VGG16, achieving 99.5% training accuracy and 85% validation accuracy. CNN + RNN models also showed strong performance with 90% training accuracy and 75% validation accuracy. However, Conv3D models faced challenges with accuracy and overfitting.
+
+In conclusion, VGG16 emerged as the most effective model for gesture recognition, showcasing its ability to leverage pre-trained knowledge effectively. CNN + RNN architectures also demonstrated robust performance in capturing both spatial and temporal features from video data. These insights not only optimize gesture recognition systems for smart TV interfaces but also mark a significant stride toward smarter appliance interaction
+
+<center><img src="assets/img/Screenshot 2024-07-02 193025.png"/></center>
+
+---
 ### Detecting Effusions in Chest X-Ray Images Using Neural Networks
 
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/subham0206/Analysis-of-Chest-X-Ray-images.git)
