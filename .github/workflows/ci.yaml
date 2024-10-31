@@ -4,7 +4,9 @@ on:
     types: [opened, synchronize]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
+             ubuntu-latest
+             macos
     name: script/cibuild
     steps:
       - uses: actions/checkout@v2
