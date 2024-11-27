@@ -8,13 +8,23 @@ layout: default
 
 ## Paublished Research
 
-*   [Optical Music Recogntion: State of the Art and Major Challenges at TENOR2020-2021](https://www.tenor-conference.org/proceedings/2020/23_Shatri_tenor20.pdf)
-*   [DoReMi: First glance at a universal OMR dataset - WoRMS2021](https://sites.google.com/view/worms2021/home)
-*   [CompldNet: Sheet Music Composer Identification using Deep Neural Network](https://arxiv.org/pdf/2211.13285.pdf#page=10)
-*   [Towards Artificially Generated Handwritten Sheet Music Datasets](https://arxiv.org/pdf/2311.04091.pdf#page=26)
-*   [Improving Sheet Music Recognition using Data Augmentation and Image Enhancement](https://arxiv.org/pdf/2311.04091.pdf#page=32)
-*   [Proceedings of the 4th International Workshop on Reading Music Systems](https://sites.google.com/view/worms2022/proceedings)
+
+*    [Knowledge Discovery in Optical Music Recognition: Enhancing Information Retrieval with Instance Segmentation, in Proceedings of the 16th International Conference on Knowledge Discovery and Information Retrieval, Best Student Paper Award, 2024.] (https://arxiv.org/abs/2408.15002)
+*    [Synthesising Handwritten Music with GANs: A Comprehensive Evaluation of CycleWGAN, ProGAN, and DCGAN, IEEE Big Data 2024 2nd Workshop on AI Music Generation (AIMG 2024)), 2024.](https://arxiv.org/abs/2411.16405)
+*   [Low-Data Classification of Historical Music Manuscripts: A Few-Shot Learning Approach, The Sixth IEEE International Conference on Image Processing Applications and Systems, 2024](https://arxiv.org/abs/2411.16408)
+*   [Crafting Handwritten Notations: Towards Sheet Music Generation, in 6th International Workshop on Reading Music Systems, 2024](https://arxiv.org/abs/2411.15741)
+*   [DoReMi: First glance at a universal OMR dataset, in 3rd International Workshop on Reading Music Systems, 2021](https://sites.google.com/view/worms2021/home)
+*   [CompldNet: Sheet Music Composer Identification using Deep Neural Network, in 4th International Workshop on Reading Music Systems, 2022](https://arxiv.org/pdf/2211.13285.pdf#page=10)
+*   [Towards Artificially Generated Handwritten Sheet Music Datasets, in 5th International Workshop on Reading Music Systems, 2023 ](https://arxiv.org/pdf/2311.04091.pdf#page=26)
+*   [Improving Sheet Music Recognition using Data Augmentation and Image Enhancement, in 5th International Workshop on Reading Music Systems, 2023](https://arxiv.org/pdf/2311.04091.pdf#page=32)
+*   [Optical Music Recogntion: State of the Art and Major Challenges, in The International Conference on Technologies for Music Notation and Representation, 2020](https://www.tenor-conference.org/proceedings/2020/23_Shatri_tenor20.pdf)
+
+### Proceedings Editor
+*   [Proceedings of the 4th International Workshop on Reading Music Systems](https://arxiv.org/abs/2211.13285)
 *   [Proceedings of the 5th International Workshop on Reading Music Systems](https://arxiv.org/pdf/2311.04091)
+*   [Proceedings of the 6th International Workshop on Reading Music Systems](https://arxiv.org/abs/2411.15741)
+
+### Presentations
 
 ## About Me 
 
