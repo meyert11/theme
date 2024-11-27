@@ -18,13 +18,37 @@ layout: default
 *   [Towards Artificially Generated Handwritten Sheet Music Datasets, in 5th International Workshop on Reading Music Systems, 2023 ](https://arxiv.org/pdf/2311.04091.pdf#page=26)
 *   [Improving Sheet Music Recognition using Data Augmentation and Image Enhancement, in 5th International Workshop on Reading Music Systems, 2023](https://arxiv.org/pdf/2311.04091.pdf#page=32)
 *   [Optical Music Recogntion: State of the Art and Major Challenges, in The International Conference on Technologies for Music Notation and Representation, 2020](https://www.tenor-conference.org/proceedings/2020/23_Shatri_tenor20.pdf)
+*   [Foundation Models for Music: A Survey](https://arxiv.org/abs/2408.14340)
 
-### Proceedings Editor
+## Proceedings Editor
 *   [Proceedings of the 4th International Workshop on Reading Music Systems](https://arxiv.org/abs/2211.13285)
 *   [Proceedings of the 5th International Workshop on Reading Music Systems](https://arxiv.org/pdf/2311.04091)
 *   [Proceedings of the 6th International Workshop on Reading Music Systems](https://arxiv.org/abs/2411.15741)
 
-### Presentations
+## Presentations
+* [ E. Shatri, “Crafting responsive assessments of AI and tech futures (CREAATIF),” Poster presented at the Policy Forum of the Harvard Data Science Review’s Special Issue on Generative AI (GenAI), June 2024.](https://www.qmul.ac.uk/deri/news--events-/featured-event-policy-forum-of-the-harvard-data-science-review---futureshock/)
+* [E. Shatri, “Navigating the intersection of AI and creativity: A case study of musicians in the age of GenAI,” Presentation at the AI & Music Lecture Symposium and Jam, Bloomsbury Festival, October 2024.](https://bloomsburyfestival.org.uk/events/ai-music-lecture-symposium/)
+* [Enhancing Handwritten Music Sheet Datasets Using Generative Adversarial Networks, the 6th International Workshop on Reading Music Systems ](https://sites.google.com/view/worms2024/program)
+
+## Podcast
+* [Womanthology podcast episode 23: Women in Robotics and Artificial Intelligence](https://www.womanthology.co.uk/womanthology-podcast-episode-23-women-in-robotics-and-artificial-intelligence-with-special-guests-elona-shatri-artificial-intelligence-and-music-phd-researcher-and-ines-santos/)
+
+## Blogposts
+
+*   [Favourites at ISMIR 2021](./2021-11-16-ismir-2021.md)
+*   [Highlights from WoRMS-2021 3rd edition](./WoRMS2021.html)
+*   [What is Optical Music Recognition?](https://towardsdatascience.com/what-is-optical-music-recognition-6515d8a53e01)
+*   [A review on Super-Resolution](https://medium.com/analytics-vidhya/a-review-on-super-resolution-2c78cd77885a)
+*   [A review of Generative Adversarial Networks](https://towardsdatascience.com/a-review-of-generative-adversarial-networks-9af21e94bda4)
+*   [Optical Music Recognition: State of the Art and Major Challenges](https://towardsdatascience.com/optical-music-recognition-state-of-the-art-and-major-challenges-aa100923c78d)
+
+
+## Commitements
+* [Member of the Editorial Team at Women in Music Information Retrieval (WiMIR)](https://wimir.wordpress.com/2023/06/19/introducing-the-wimir-editorial-team-and-issuing-a-call-for-contributions-2/)
+* [General Chair at the 3rd, 4th, 5th, 6th International Workshop on Reading Music Systems](https://sites.google.com/view/worms2024/people)
+* [Member of the Equality, Diversity and Inclusion initiative at EECS and Women in EECS site at QMUL](https://www.qmul.ac.uk/eecs/about-us/equality-diversity-and-inclusion/edi-committee/)
+* [Student Ambassador at EECS]
+
 
 ## About Me 
 
@@ -56,14 +80,6 @@ Documentation is also availabe in the same repository of the data release.
 
 
 
-## Blogposts
-
-*   [Favourites at ISMIR 2021](./2021-11-16-ismir-2021.md)
-*   [Highlights from WoRMS-2021 3rd edition](./WoRMS2021.html)
-*   [What is Optical Music Recognition?](https://towardsdatascience.com/what-is-optical-music-recognition-6515d8a53e01)
-*   [A review on Super-Resolution](https://medium.com/analytics-vidhya/a-review-on-super-resolution-2c78cd77885a)
-*   [A review of Generative Adversarial Networks](https://towardsdatascience.com/a-review-of-generative-adversarial-networks-9af21e94bda4)
-*   [Optical Music Recognition: State of the Art and Major Challenges](https://towardsdatascience.com/optical-music-recognition-state-of-the-art-and-major-challenges-aa100923c78d)
 
 ## Teaching
 
