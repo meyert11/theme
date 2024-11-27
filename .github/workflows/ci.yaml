@@ -9,7 +9,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.7.8' # Or another version that suits your project
+          ruby-version: '2.6.10' # Or another version that suits your project
       
       # Optional: Include this step if your project requires Node.js
       - name: Set up Node.js
