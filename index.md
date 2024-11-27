@@ -33,7 +33,7 @@ layout: default
 ## Podcast
 * [Womanthology podcast episode 23: Women in Robotics and Artificial Intelligence](https://www.womanthology.co.uk/womanthology-podcast-episode-23-women-in-robotics-and-artificial-intelligence-with-special-guests-elona-shatri-artificial-intelligence-and-music-phd-researcher-and-ines-santos/)
 
-## Blogposts
+## [Blogposts](./blogposts.md)
 
 *   [Favourites at ISMIR 2021](./2021-11-16-ismir-2021.md)
 *   [Highlights from WoRMS-2021 3rd edition](./WoRMS2021.html)
