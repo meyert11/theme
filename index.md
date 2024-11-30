@@ -2,6 +2,16 @@ Data Science Portfolio
 ---
 ## Machine learning
 
+### AI-Driven Meta-Human Interviews: Redefining the Future of Hiring
+
+Developed an AI-powered meta-human bot for candidate interviews, enhancing recruitment efficiency by reducing interview time by 70% for a UAE-based recruitment organization, while providing real-time candidate evaluation for faster, data-driven decision-making.
+
+[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/subham0206/AI-Based-Meta-Human-Interviewer)
+
+<center><img src="assets/img/Meta_Human_Interviewer.jpeg"/></center>
+
+---
+
 ### Revolutionizing Pharmaceutical Logistics: AI-Powered Invoice Processing
 
 Led development of end-to-end AI-powered invoice processing, leveraging NLP, OCR, and RPA technologies, resulting in 5000+ man-hours saved and a 90% improvement in efficiency.
