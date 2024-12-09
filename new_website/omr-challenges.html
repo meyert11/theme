@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optical Music Recognition: State of the Art and Major Challenges</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Elona Shatri</h1>
+        <p>AI Researcher | Ethics Advocate | Music Technologist</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blogposts.html">Blogposts</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="blogpost">
+            <h2>Optical Music Recognition: State of the Art and Major Challenges</h2>
+            <article>
+                <h3>Review paper summary on OMR — paradigm shift and possible directions</h3>
+                <p>
+                    Recently, I got my very first paper accepted to the <a href="https://arxiv.org/abs/2006.07885" target="_blank">International Conference on Technologies for Music Notation and Representation (TENOR) 2020</a>. This experience has been insightful, serving as a guide for my future publishing endeavors.
+                </p>
+                <p>
+                    The paper summarizes prior work and takes a position on progressing Optical Music Recognition (OMR). It highlights the paradigm shift from conventional computer vision methods to end-to-end deep learning techniques.
+                </p>
+
+                <h3>Overview of OMR Pipeline</h3>
+                <p>
+                    The traditional OMR pipeline consists of four stages: image preprocessing, musical object detection, musical symbol reconstruction, and encoding into a machine-readable format. Each stage has seen advancements over the years:
+                </p>
+                <ul>
+                    <li>
+                        <strong>Image Preprocessing:</strong> Techniques like binarization, blurring, deskewing, and noise removal have evolved from traditional methods to neural networks such as sectional auto-encoders.
+                    </li>
+                    <li>
+                        <strong>Musical Object Detection:</strong> This stage benefits from computer vision advancements. Methods like Fast R-CNNs and Single Shot Detectors (SSD) use pre-trained models fine-tuned on datasets like MUSCIMA++.
+                    </li>
+                    <li>
+                        <strong>Musical Symbol Reconstruction:</strong> Structural and semantic relationships between symbols are reconstructed using heuristics and rules. Recent research explores deep learning for this stage, though challenges remain in capturing music's spatial and temporal dependencies.
+                    </li>
+                    <li>
+                        <strong>Encoding:</strong> Outputs are stored in formats like MIDI and MusicXML, supporting various levels of replayability and structural representation.
+                    </li>
+                </ul>
+
+                <h3>Challenges in OMR</h3>
+                <p>
+                    Despite progress, several challenges persist:
+                </p>
+                <ul>
+                    <li>Lack of large labeled datasets for training.</li>
+                    <li>Improving accuracy in detecting music objects and staff lines.</li>
+                    <li>Reconstructing semantic relationships between symbols.</li>
+                    <li>Standardizing output formats, evaluation metrics, and representations.</li>
+                </ul>
+
+                <h3>Paradigm Shift to End-to-End Learning</h3>
+                <p>
+                    The field is moving towards end-to-end deep learning models, streamlining processes like symbol detection and semantic reconstruction. These methods promise efficiency but require solving representation and standardization challenges.
+                </p>
+
+                <h3>Conclusion</h3>
+                <p>
+                    Optical Music Recognition is a fascinating field bridging music and AI. My paper highlights its evolution, challenges, and future directions, paving the way for innovative research. <a href="https://arxiv.org/abs/2006.07885" target="_blank">Read more about it here</a>.
+                </p>
+
+                <h3>References</h3>
+                <ul>
+                    <li>I. Fujinaga, “Optical music recognition using projections,” PhD dissertation, McGill University Montreal, Canada, 1988.</li>
+                    <li>B. Couasnon, et al., “Using logic programming languages for optical music recognition,” In Proceedings of the Third International Conference on The Practical Application of Prolog, 1995.</li>
+                    <li>A. Fornes, et al., “Writer identification in old handwritten music scores,” 2008 The Eighth IAPR International Workshop on Document Analysis Systems. IEEE, 2008, pp. 347–353.</li>
+                    <li>A. Pacha, et al., “Handwritten Music Object Detection: Open Issues and Baseline Results,” 2018 13th IAPR International Workshop on Document Analysis Systems (DAS). Vienna: IEEE, 2018.</li>
+                    <li>E. Shatri and G. Fazekas, “Optical Music Recognition: State of the Art and Major Challenges”, arXiv preprint arXiv:2006.07885, 2020.</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Elona Shatri. All rights reserved.</p>
+    </footer>
+</body>
+</html>
